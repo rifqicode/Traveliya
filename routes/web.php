@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/kontol', function () {
+    return Auth::logout();
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/train', 'TrainController@index')->name('train');
+Route::post('/train/find' , 'TrainController@findTrain');

@@ -11,6 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -39,6 +40,15 @@
                         &nbsp;
                     </ul>
 
+
+                    @guest
+                    @else
+                    <ul class="nav navbar-nav">
+                         <li><a href="{{ url('/home') }}">Home</a></li>
+                         <li><a href="{{ url('flight') }}">Flight</a></li>
+                         <li><a href="{{ url('/train')}}">Train</a></li>
+                    </ul>
+                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
@@ -50,7 +60,6 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <ul class="dropdown-menu">
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -70,11 +79,17 @@
                 </div>
             </div>
         </nav>
+        <div class="container">
 
+        @include('flash::message')
         @yield('content')
+
+
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
