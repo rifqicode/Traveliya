@@ -19,6 +19,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+// Plane
+Route::get('/flight' , 'FlightController@index')->name('plane');
+Route::post('/flight/find' , 'FlightController@findPlane');
 
+// train
 Route::get('/train', 'TrainController@index')->name('train');
 Route::post('/train/find' , 'TrainController@findTrain');

@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Train</div>
+                <div class="panel-heading">Plane</div>
 
                 <div class="panel-body">
-                    <form action="{{ url('/train/find/')}}" method="post">
+                    <form action="{{ url('/flight/find/')}}" method="post">
                       {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('from') ? ' has-error' : '' }}">

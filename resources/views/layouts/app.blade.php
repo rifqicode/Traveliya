@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Traveliya</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -30,7 +30,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                        Traveliya
                     </a>
                 </div>
 
@@ -40,15 +40,11 @@
                         &nbsp;
                     </ul>
 
-
-                    @guest
-                    @else
                     <ul class="nav navbar-nav">
                          <li><a href="{{ url('/home') }}">Home</a></li>
                          <li><a href="{{ url('flight') }}">Flight</a></li>
                          <li><a href="{{ url('/train')}}">Train</a></li>
                     </ul>
-                    @endguest
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->

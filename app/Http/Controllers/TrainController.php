@@ -11,21 +11,34 @@ class TrainController extends Controller
 
     public function __construct()
     {
-        $this->middleware('verify');
+
     }
 
     public function index()
     {
-      return view('train');
+      $alldatas = Train::all();
+      // return json_encode($alldatas);
+      return view('train')->with('datas' , $alldatas);
     }
 
     public function findTrain(Request $request)
     {
+        $validatedData = $request->validate([
+              'from' => 'required',
+              'destination' => 'required'
+          ]);
+
         $from = $request->input('from');
         $destination = $request->input('destination');
-        $find = Train::all();
+        $find = Train::where(['from' => $from , 'destination' => $destination])->get();
 
-        return json_encode($find);
-
+        if (count($find) == 0) {
+          flash("Kereta tidak ditemukan");
+          return redirect('/train');
+        } else {
+          return view('findtrain')->with('traindata' , $find);
+        }
+        // $find = Train::where('from' , $from);
+        // return json_encode($find);
     }
 }
