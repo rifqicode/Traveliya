@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth','verify']);
     }
 
     /**
@@ -24,11 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $verify = Auth::user()->verify;
-
-        if ($verify == 0) {
-          return view('home');
-        }
+      return view('home');
 
     }
 }
