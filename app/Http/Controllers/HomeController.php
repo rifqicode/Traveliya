@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
+        $this->middleware('verify');
     }
 
     /**
@@ -24,8 +24,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-      flash("woe");
       return view('home');
-
     }
 }

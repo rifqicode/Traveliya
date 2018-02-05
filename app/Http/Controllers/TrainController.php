@@ -64,6 +64,6 @@ class TrainController extends Controller
 
     public function createTicket($adult)
     {
-
+      
     }
 }

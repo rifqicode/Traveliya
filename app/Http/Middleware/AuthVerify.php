@@ -15,9 +15,11 @@ class AuthVerify
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (auth()->user()->verify == 0) {
-          return redirect('/verify');
-        }
+      if (Auth::guard($guard)->check()) {
+          if (auth()->user()->verify != 1) {
+            flash('Verifikasi woe')->warning();
+          }
+      }
       return $next($request);
     }
 }
