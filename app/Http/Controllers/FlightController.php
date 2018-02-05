@@ -15,19 +15,37 @@ class FlightController extends Controller
       public function findPlane(Request $request)
       {
         $validatedData = $request->validate([
-              'from' => 'required',
-              'destination' => 'required'
+          'departure_date' => 'required',
+          'class' => 'required',
+          'from' => 'required',
+          'destination' => 'required',
+          'adult' => 'required',
+          'child' => 'required',
           ]);
 
-        $from = $request->input('from');
-        $destination = $request->input('destination');
-        $find = Plane::where(['from' => $from , 'destination' => $destination])->get();
+          $dep_date = $request->input('departure_date');
+          $class = $request->input('class');
+          $from = $request->input('from');
+          $destination = $request->input('destination');
+          $adult = $request->input('adult');
+          $child = $request->input('child');
 
-        if (count($find) == 0) {
-          flash("Pesawat tidak ditemukan");
-          return redirect('/flight');
-        } else {
-          return view('planelist')->with('planedata' , $find);
-        }
+          if ( $adult <= $child ) {
+              flash('Anak Anak tidak boleh lebih dari orang dewasa');
+              return redirect('/train');
+          } else {
+            $find = Plane::where(['departure_date' => $dep_date ,
+                                  'class' => $class ,
+                                  'from' => $from ,
+                                  'destination' => $destination])->get();
+            // $passenger = ['adult' => $adult];
+            if (count($find) == 0) {
+              flash("Pesawat tidak ditemukan");
+              return redirect('/flight');
+            } else {
+              return view('planelist',compact('find' , 'adult' ,'child'));
+            }
+          }
+
       }
 }

@@ -8,13 +8,13 @@
 
                 <div class="panel-body">
 
-                  @foreach($planedata as $dplane)
+                  @foreach($find as $dplane)
                   <div class="card" style="width: 20rem;">
                       <img class="card-img-top" src="..." alt="Card image cap">
                       <div class="card-block">
-                        <h4 class="card-title">{{ $dtrain->train }}</h4>
-                        <p class="card-text">Dari :{{ $dtrain->from }}</p>
-                        <p class="card-text">Tujuan :{{ $dtrain->destination }}</p>
+                        <h4 class="card-title">{{ $dplane->airplane }}</h4>
+                        <p class="card-text">Dari :{{ $dplane->from }}</p>
+                        <p class="card-text">Tujuan :{{ $dplane->destination }}</p>
                         <a href="#" class="btn btn-primary"> Order </a>
                       </div>
                       </div>

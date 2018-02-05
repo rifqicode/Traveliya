@@ -17,12 +17,13 @@ class CreatePlanesTable extends Migration
           $table->increments('id_plane');
           $table->integer('id_airport');
           $table->string('airplane');
+          $table->string('class');
+          $table->date('departure_date');
           $table->string('from');
           $table->string('destination');
           $table->time('hours');
-          $table->date('departure_date');
-          $table->string('price');
-          $table->timestamps();
+          $table->integer('max');
+          $table->integer('price');
         });
     }
 

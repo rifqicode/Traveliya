@@ -17,13 +17,13 @@ class CreateTrainsTable extends Migration
           $table->increments('id_train');
           $table->integer('id_station');
           $table->string('train');
+          $table->string('class');
+          $table->date('departure_date');
           $table->string('from');
           $table->string('destination');
           $table->time('hours');
           $table->integer('max');
-          $table->date('departure_date');
           $table->integer('price');
-          $table->timestamps();
         });
     }
 

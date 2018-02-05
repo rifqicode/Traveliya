@@ -8,7 +8,9 @@
 
                 <div class="panel-body">
 
-                  @foreach($traindata as $dtrain)
+                  <input type="hidden" name="adult" value="{{ $adult }}">
+                  <input type="hidden" name="child" value="{{ $child }}">
+                  @foreach($find as $dtrain)
                   <div class="card" style="width: 20rem;">
                       <img class="card-img-top" src="..." alt="Card image cap">
                       <div class="card-block">

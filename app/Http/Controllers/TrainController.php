@@ -24,21 +24,46 @@ class TrainController extends Controller
     public function findTrain(Request $request)
     {
         $validatedData = $request->validate([
+              'departure_date' => 'required',
+              'class' => 'required',
               'from' => 'required',
-              'destination' => 'required'
+              'destination' => 'required',
+              'adult' => 'required',
+              'child' => 'required',
+
           ]);
 
+        $dep_date = $request->input('departure_date');
+        $class = $request->input('class');
         $from = $request->input('from');
         $destination = $request->input('destination');
-        $find = Train::where(['from' => $from , 'destination' => $destination])->get();
+        $adult = $request->input('adult');
+        $child = $request->input('child');
 
-        if (count($find) == 0) {
-          flash("Kereta tidak ditemukan");
-          return redirect('/train');
+        // return $dep_date.$class.$from.$destination.$adult.$child;
+        if ( $adult <= $child ) {
+            flash('Anak Anak tidak boleh lebih dari orang dewasa');
+            return redirect('/train');
         } else {
-          return view('findtrain')->with('traindata' , $find);
+          $find = Train::where(['departure_date' => $dep_date ,
+                                'class' => $class ,
+                                'from' => $from ,
+                                'destination' => $destination])->get();
+          // $passenger = ['adult' => $adult];
+          if (count($find) == 0) {
+            flash("Kereta tidak ditemukan");
+            return redirect('/train');
+          } else {
+            return view('findtrain',compact('find' , 'adult' ,'child'));
+          }
         }
+
         // $find = Train::where('from' , $from);
         // return json_encode($find);
+    }
+
+    public function createTicket($adult)
+    {
+
     }
 }

@@ -17,8 +17,10 @@ class CreateTrainticketsTable extends Migration
           $table->increments('id_trainticket');
           $table->integer('id_users');
           $table->integer('id_train');
+          $table->string('type_trip');
           $table->string('ticket_code');
-          $table->integer('passenger');
+          $table->integer('adult')->default('0');
+          $table->integer('child')->default('0');
           $table->integer('status');
           $table->timestamps();
         });

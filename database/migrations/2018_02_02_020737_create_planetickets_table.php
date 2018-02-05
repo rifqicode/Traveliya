@@ -17,8 +17,10 @@ class CreatePlaneticketsTable extends Migration
           $table->increments('id_planeticket');
           $table->integer('id_users');
           $table->integer('id_airport');
+          $table->string('type_trip');
           $table->string('ticket_code');
-          $table->integer('passenger');
+          $table->integer('adult')->default('0');
+          $table->integer('child')->default('0');
           $table->integer('status');
           $table->timestamps();
         });
