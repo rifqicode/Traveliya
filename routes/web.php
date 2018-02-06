@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/verifikasi', 'VerifikasiController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 // Plane
 Route::get('/flight' , 'FlightController@index')->name('plane');

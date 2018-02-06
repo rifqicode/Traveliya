@@ -17,7 +17,7 @@ class AuthVerify
     {
       if (Auth::guard($guard)->check()) {
           if (auth()->user()->verify != 1) {
-            flash('Verifikasi woe')->warning();
+            flash('Verifikasi woe')->important();
           }
       }
       return $next($request);
