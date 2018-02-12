@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
-class AuthVerify
+
+class BookingVerification
 {
     /**
      * Handle an incoming request.
@@ -16,12 +17,11 @@ class AuthVerify
     public function handle($request, Closure $next, $guard = null)
     {
       if (Auth::guard($guard)->check()) {
-          if (auth()->user()->verify != 1) {
-            flash('Verifikasi woe')->important();
-          } elseif (auth()->user()->verify != 2) {
-            flash('Harap Periksa Email')->warning();
-          }
+
+      } else {
+        flash('Harap Login Terlebih Dahulu untuk memudahkan pendataan');
+        return redirect('/login');
       }
-      return $next($request);
+        return $next($request);
     }
 }

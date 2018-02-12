@@ -17,8 +17,8 @@
                               <div class="col-md-6" required>
                                   <select name="type_trip" class="form-control">
                                     <option value="NULL">Jenis Trip</option>
-                                    <option value="Ekonomi">Single Trip</option>
-                                    <option value="Ekonomi">Round Trip</option>
+                                    <option value="Single_Trip">Single Trip</option>
+                                    <option value="Round_Trip">Round Trip</option>
                                   </select>
                               @if ($errors->has('type_trip'))
                                   <span class="help-block">
@@ -49,7 +49,7 @@
                               <select name="class" class="form-control">
                                 <option value="NULL">Pilih class</option>
                                 <option value="Ekonomi">Ekonomi</option>
-                                <option value="Ekonomi">Eklusif</option>
+                                <option value="Eklusif">Eklusif</option>
                               </select>
 
                               @if ($errors->has('class'))

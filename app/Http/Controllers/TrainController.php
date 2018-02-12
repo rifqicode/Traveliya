@@ -25,6 +25,7 @@ class TrainController extends Controller
     {
         $validatedData = $request->validate([
               'departure_date' => 'required',
+              'type_trip' => 'required',
               'class' => 'required',
               'from' => 'required',
               'destination' => 'required',
@@ -34,6 +35,7 @@ class TrainController extends Controller
           ]);
 
         $dep_date = $request->input('departure_date');
+        $type_trip = $request->input('type_trip');
         $class = $request->input('class');
         $from = $request->input('from');
         $destination = $request->input('destination');
@@ -54,7 +56,7 @@ class TrainController extends Controller
             flash("Kereta tidak ditemukan");
             return redirect('/train');
           } else {
-            return view('findtrain',compact('find' , 'adult' ,'child'));
+            return view('findtrain',compact('find' , 'adult' ,'child' , 'type_trip'));
           }
         }
 
@@ -62,8 +64,5 @@ class TrainController extends Controller
         // return json_encode($find);
     }
 
-    public function createTicket($adult)
-    {
-      
-    }
+
 }
