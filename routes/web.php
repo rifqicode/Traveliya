@@ -18,7 +18,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/verifikasi', 'VerifikasiController@index');
+Route::get('/verifikasi', 'VerifikasiController@index')->name('verifikasi');
+
+Route::get('/user/verify', 'VerifikasiController@confirm')->name('userverify');
 
 Route::get('/home', 'HomeController@index')->name('home');
 // Plane
@@ -28,3 +30,5 @@ Route::post('/flight/find' , 'FlightController@findPlane');
 // train
 Route::get('/train', 'TrainController@index')->name('train');
 Route::post('/train/find' , 'TrainController@findTrain');
+Route::post('/train/booking/{id}' , 'BookingController@bookingView');
+Route::post('/TrainBooking' , 'BookingController@BookingForm');
