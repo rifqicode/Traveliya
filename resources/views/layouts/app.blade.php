@@ -41,7 +41,7 @@
                     </ul>
 
                     <ul class="nav navbar-nav">
-                         <li><a href="{{ url('/home') }}">Home</a></li>
+                         <!-- <li><a href="{{ url('/home') }}">Home</a></li> -->
                          <li><a href="{{ url('flight') }}">Flight</a></li>
                          <li><a href="{{ url('/train')}}">Train</a></li>
                     </ul>
@@ -85,8 +85,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="//code.jquery.com/jquery.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
     <script>
     $('#flash-overlay-modal').modal();
