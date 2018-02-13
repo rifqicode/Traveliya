@@ -18,6 +18,7 @@ class CreateDetailPassengersTable extends Migration
             $table->integer('id_trainticket');
             $table->string('name_passenger');
             $table->string('email_passenger');
+            $table->string('no_ktp');
             $table->string('born_date');
             $table->timestamps();
         });

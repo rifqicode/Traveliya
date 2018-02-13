@@ -22,7 +22,7 @@ Route::get('/verifikasi', 'VerifikasiController@index')->name('verifikasi');
 
 Route::get('/user/verify', 'VerifikasiController@confirm')->name('userverify');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{from}/{destination}', 'HomeController@index')->name('home');
 // Plane
 Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');

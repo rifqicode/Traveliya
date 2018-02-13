@@ -37,6 +37,8 @@ class BookingController extends Controller
         $child = $request->input('child');
         $no_telp = $request->input('no_telp');
         $type_trip = $request->input('type_trip');
+        $name_contact = $request->input('name_contact');
+        $email_contact = $request->input('email_contact');
         $name = $request->input('name');
         $email = $request->input('email');
         $no_ktp = $request->input('no_ktp');
@@ -52,12 +54,20 @@ class BookingController extends Controller
         $dTrainticket->adult = $adult;
         $dTrainticket->child = $child;
         $dTrainticket->status = 0;
-        $dTrainticket->created_at = Carbon::now();
         $dTrainticket->save();
 
-
-        for ($i=0; $i <= $adult ; $i++) {
-
+        for ($i=0; $i < $adult ; $i++) {
+            $dPassenger = new DetailPassenger();
+            $dPassenger->id_trainticket = $idtrain;
+            $dPassenger->name_passenger = $name[$i];
+            $dPassenger->email_passenger = $email[$i];
+            $dPassenger->no_ktp = $no_ktp[$i];
+            $dPassenger->born_date = $borndate[$i];
+            $dPassenger->save();
+            // return $name[$i];
         }
+
+        flash('Pemesanan Berhasil');
+        return redirect('train');
   }
 }
