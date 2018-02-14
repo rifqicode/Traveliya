@@ -19,8 +19,8 @@ class CreatePlanesTable extends Migration
           $table->string('airplane');
           $table->string('class');
           $table->date('departure_date');
-          $table->string('from');
-          $table->string('destination');
+          $table->integer('from');
+          $table->integer('destination');
           $table->time('hours');
           $table->integer('max');
           $table->integer('price');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Train as Train;
+use DB;
 
 class TrainController extends Controller
 {
@@ -47,11 +48,13 @@ class TrainController extends Controller
             flash('Anak Anak tidak boleh lebih dari orang dewasa');
             return redirect('/train');
         } else {
-          $find = Train::where(['departure_date' => $dep_date ,
-                                'class' => $class ,
-                                'from' => $from ,
-                                'destination' => $destination])->get();
-          // $passenger = ['adult' => $adult];
+          $find = DB::table('trains as A')
+                  ->join('stations as B', 'a.from', '=', 'b.id_station')
+                  ->join('stations as C', 'a.destination', '=', 'c.id_station')
+                  ->where(['departure_date' => $dep_date ,
+                                        'class' => $class ,
+                                        'from' => $from ,
+                                        'destination' => $destination])->get();
           if (count($find) == 0) {
             flash("Kereta tidak ditemukan");
             return redirect('/train');

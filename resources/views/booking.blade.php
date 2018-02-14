@@ -18,8 +18,8 @@
                     <input type="hidden" name="type_trip" value="{{ $type_trip }}">
 
                     <h4>Data Kontak</h4>
-                    <input type="text" placeholder="Name" name="name[]" value="{{ Auth::user()->name }}">
-                    <input type="text" placeholder="Email" name="email[]" value="{{ Auth::user()->email }}">
+                    <input type="text" placeholder="Name" name="name_contact" value="{{ Auth::user()->name }}">
+                    <input type="text" placeholder="Email" name="email_contact" value="{{ Auth::user()->email }}">
                     <input type="text" placeholder="No_Telp" name="no_telp">
 
                     @for($a=1; $a<= $adult; $a++)

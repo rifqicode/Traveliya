@@ -19,7 +19,7 @@ class BookingVerification
       if (Auth::guard($guard)->check()) {
 
       } else {
-        flash('Harap Login Terlebih Dahulu untuk memudahkan pendataan');
+        flash('Harap login terlebih dahulu sebelum melakukan pemesanan');
         return redirect('/login');
       }
         return $next($request);
