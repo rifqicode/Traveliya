@@ -14,6 +14,15 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/index', function () {
+    return view('welcome');
+});
+Route::get('/pesawat', function () {
+    return view('pesawat');
+});
+Route::get('/kereta', function () {
+    return view('kereta');
+});
 
 
 Auth::routes();
