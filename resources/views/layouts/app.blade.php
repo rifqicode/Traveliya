@@ -42,13 +42,16 @@
 
                     <ul class="nav navbar-nav">
                          <!-- <li><a href="{{ url('/home') }}">Home</a></li> -->
-                         <li><a href="{{ url('flight') }}">Flight</a></li>
-                         <li><a href="{{ url('/train')}}">Train</a></li>
+                         <!-- <li><a href="{{ url('flight') }}">Flight</a></li> -->
+                         <!-- <li><a href="{{ url('/train')}}">Train</a></li> -->
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
+                            <li><a href="{{ url('/index') }}">Home</a></li>
+							<li><a href="{{ url('/pesawat') }}">Pesawat</a></li>
+							<li><a href="{{ url('/kereta') }}">Kereta</a></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else

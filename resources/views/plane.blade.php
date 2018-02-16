@@ -74,6 +74,14 @@
                             </div>
                         </div>
 
+                      <div class="col-xxs-12 col-xs-6 mt">
+                        <div class="input-field">
+                          <label for="from">From:</label>
+                          <input type="text" class="form-control" id="from-place" placeholder="Dari Kota"/>
+
+                        </div>
+                      </div>
+
                         <div class="form-group{{ $errors->has('destination') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Tujuan</label>
 
