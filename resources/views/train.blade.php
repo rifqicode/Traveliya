@@ -32,7 +32,21 @@
                           <label for="password" class="col-md-4 control-label">Tanggal Berangkat </label>
 
                           <div class="col-md-6">
-                              <input id="departure_date" type="date" class="form-control" name="departure_date" required>
+                              <input id="departure_date" type="date" class="form-control" name="departure_date[]" required>
+
+                              @if ($errors->has('departure_date'))
+                                  <span class="help-block">
+                                      <strong>{{ $errors->first('departure_date') }}</strong>
+                                  </span>
+                              @endif
+                          </div>
+                      </div>
+
+                      <div class="form-group{{ $errors->has('departure_date') ? ' has-error' : '' }}">
+                          <label for="password" class="col-md-4 control-label">Tanggal Pulang</label>
+
+                          <div class="col-md-6">
+                              <input id="departure_date" type="date" class="form-control" name="departure_date[]" >
 
                               @if ($errors->has('departure_date'))
                                   <span class="help-block">

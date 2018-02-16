@@ -22,7 +22,7 @@ Route::get('/verifikasi', 'VerifikasiController@index')->name('verifikasi');
 
 Route::get('/user/verify', 'VerifikasiController@confirm')->name('userverify');
 
-Route::get('/home/{from}/{destination}', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 // Plane
 Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');
@@ -31,4 +31,8 @@ Route::post('/flight/find' , 'FlightController@findPlane');
 Route::get('/train', 'TrainController@index')->name('train');
 Route::post('/train/find' , 'TrainController@findTrain');
 Route::post('/train/booking/{id}' , 'BookingController@bookingView');
+// Round Trip
+Route::post('/train/booking/{idTrain1}/{idTrain2}' , 'BookingController@RoundTrip');
+// Booking form
 Route::post('/TrainBooking' , 'BookingController@BookingForm');
+Route::post('/TrainBooking/roundtrip' , 'BookingController@BookingForm');

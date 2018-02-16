@@ -24,4 +24,13 @@ class HomeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+     public function index()
+     {
+      $traindatas = ['0' => '1', '1' => '2'];
+
+       for ($i=0; $i < 2; $i++) {
+         echo $traindatas[$i];
+       }
+     }
+
 }

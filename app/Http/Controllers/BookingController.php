@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\DetailPassenger;
 use App\Trainticket;
 use Carbon\Carbon;
+use App\Train as Train;
 use Auth;
 
 class BookingController extends Controller
@@ -18,15 +19,22 @@ class BookingController extends Controller
   public function bookingView(Request $request , $id)
   {
 
+    $idDepTrain = $id;
+    $dep_date = $request->input('dep_date');
+    $return_date = $request->input('return_date');
+    $from = $request->input('from');
+    $destination = $request->input('destination');
+    $class = $request->input('class');
     $adult = $request->input('adult');
     $child = $request->input('child');
     $type_trip = $request->input('type_trip');
 
-    // return $type_trip;
-
-    // $datas = ['name' => $name , 'email' => $email , 'adult' => $adult , 'child' => $child];
+    if ($type_trip == "Round_Trip") {
+      $find = Train::trainList($return_date , $class ,  $destination, $from);
+      return view('roundtrip' , compact('adult','child' , 'idDepTrain' , 'type_trip' , 'find' , 'dep_date' , 'return_date'));
+    } else {
     return view('booking' , compact('adult','child' , 'id' , 'type_trip'));
-    // return $datas;
+    }
   }
 
   public function BookingForm(Request $request)
@@ -44,30 +52,64 @@ class BookingController extends Controller
         $no_ktp = $request->input('no_ktp');
         $borndate = $request->input('born_date');
 
+        if ($type_trip == "Round_Trip") {
+          $idTrain1 = $request->input('idTrain1');
+          $idTrain2 = $request->input('idTrain2');
 
-        $dTrainticket = new Trainticket();
-        $dTrainticket->id_users = Auth::user()->id;
-        $dTrainticket->id_train = $idtrain;
-        $dTrainticket->type_trip = $type_trip; // belum
-        $dTrainticket->ticket_code = str_random(10);
-        $dTrainticket->no_telp = $no_telp;
-        $dTrainticket->adult = $adult;
-        $dTrainticket->child = $child;
-        $dTrainticket->status = 0;
-        $dTrainticket->save();
+          $traindatas = ['0' => $idTrain1 , '1' => $idTrain2];
+          for ($i=0; $i < 2; $i++) {
+            $dTrainticket = new Trainticket();
+            $dTrainticket->id_users = Auth::user()->id;
+            $dTrainticket->id_train = $traindatas[$i];
+            $dTrainticket->type_trip = $type_trip;
+            $dTrainticket->ticket_code = str_random(10);
+            $dTrainticket->no_telp = $no_telp;
+            $dTrainticket->adult = $adult;
+            $dTrainticket->child = $child;
+            $dTrainticket->status = 0;
+            $dTrainticket->save();
+          }
+        } else {
+          $dTrainticket = new Trainticket();
+          $dTrainticket->id_users = Auth::user()->id;
+          $dTrainticket->id_train = $idtrain;
+          $dTrainticket->type_trip = $type_trip;
+          $dTrainticket->ticket_code = str_random(10);
+          $dTrainticket->no_telp = $no_telp;
+          $dTrainticket->adult = $adult;
+          $dTrainticket->child = $child;
+          $dTrainticket->status = 0;
+          $dTrainticket->save();
 
-        for ($i=0; $i < $adult ; $i++) {
-            $dPassenger = new DetailPassenger();
-            $dPassenger->id_trainticket = $idtrain;
-            $dPassenger->name_passenger = $name[$i];
-            $dPassenger->email_passenger = $email[$i];
-            $dPassenger->no_ktp = $no_ktp[$i];
-            $dPassenger->born_date = $borndate[$i];
-            $dPassenger->save();
-            // return $name[$i];
+          for ($i=0; $i < $adult ; $i++) {
+              $dPassenger = new DetailPassenger();
+              $dPassenger->id_trainticket = $idtrain;
+              $dPassenger->name_passenger = $name[$i];
+              $dPassenger->email_passenger = $email[$i];
+              $dPassenger->no_ktp = $no_ktp[$i];
+              $dPassenger->born_date = $borndate[$i];
+              $dPassenger->save();
+          }
         }
 
         flash('Pemesanan Berhasil');
         return redirect('train');
+  }
+
+  public function RoundTrip(Request $request , $idTrain1 , $idTrain2)
+  {
+
+    $dep_date = $request->input('dep_date');
+    $return_date = $request->input('return_date');
+    $adult = $request->input('adult');
+    $child = $request->input('child');
+    $from = $request->input('from');
+    $type_trip = $request->input('type_trip');
+    $destination = $request->input('destination');
+
+
+      return view('roundtripbook', compact('adult','child' , 'idTrain1'
+                                      , 'type_trip' , 'idTrain2'));
+
   }
 }
