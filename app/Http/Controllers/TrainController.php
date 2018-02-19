@@ -35,6 +35,8 @@ class TrainController extends Controller
 
           ]);
 
+        return $request;
+
         $departure = $request->input('departure_date');
         $dep_date = $departure[0];
         $return_date = $departure[1];

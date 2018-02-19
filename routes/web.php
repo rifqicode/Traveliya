@@ -18,10 +18,11 @@ Route::get('/index', function () {
     return view('welcome');
 });
 Route::get('/pesawat', function () {
+  flash('test');
     return view('pesawat');
 });
 Route::get('/kereta', function () {
-    return view('kereta');
+    return view('trains');
 });
 
 
