@@ -24,6 +24,10 @@ Route::get('/pesawat', function () {
 Route::get('/kereta', function () {
     return view('trains');
 });
+Route::get('/edit', function () {
+    return view('editprofile');
+});
+
 
 
 Auth::routes();
