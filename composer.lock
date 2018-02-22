@@ -2917,11 +2917,7 @@
                 "spy",
                 "stub"
             ],
-<<<<<<< HEAD
             "time": "2018-02-19T10:16:54+00:00"
-=======
-            "time": "2018-02-11T18:49:29+00:00"
->>>>>>> 59f7553c6f587500affc95d377668650c1b8e412
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3915,11 +3911,7 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
-<<<<<<< HEAD
             "time": "2018-02-02T13:47:40+00:00"
-=======
-            "time": "2018-01-26T10:44:34+00:00"
->>>>>>> 59f7553c6f587500affc95d377668650c1b8e412
         },
         {
             "name": "theseer/tokenizer",
