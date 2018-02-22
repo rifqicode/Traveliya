@@ -4,7 +4,7 @@
 
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/plane.jpg);">
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/dark.jpg);">
 				<div class="desc">
 					<div class="container">
 						<div class="row">
@@ -28,32 +28,32 @@
 									 <div role="tabpanel" class="tab-pane active" id="singletrip">
 										<div class="row">
 											<div class="col-xxs-12 col-xs-6 mt">
-												<form class="" action="{{ url('/flight/find')}}" method="post">
+												<form class="" action="{{ url('/train/find')}}" method="post">
 													{{ csrf_field() }}
-												<input type="hidden" name="type_trip" value="Single_Trip">
+													<input type="hidden" name="type_trip" value="Single_Trip">
 												<div class="input-field">
 													<label for="from">Dari  :</label>
-													<input type="text" name="from" class="form-control" id="from-place" placeholder="Kota/Bandara"/>
+													<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/>
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
 													<label for="from">Tujuan    :</label>
-													<input type="text" name="destination" class="form-control" id="to-place" placeholder="Kota/Bandara"/>
+													<input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
 												</div>
 											</div>
 											<div class="col-sm-12 mt">
 												<div class="input-field">
 													<label for="date-start">Tanggal Berangkat   :</label>
-													<input type="text" name="departure_date" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
+													<input type="date" name="departure_date" class="form-control" />
 												</div>
 											</div>
 
 											<div class="col-sm-12 mt">
 												<section>
 													<label for="class">Kelas    :</label>
-													<select name="class" class="cs-select cs-skin-border">
-														<option value="" disabled selected>Pilih Kelas</option>
+													<select name="class" class="form-control">
+														<option value="">Pilih Kelas</option>
 														<option value="ekonomi">Ekonomi</option>
 														<option value="Bisnis">Bisnis</option>
 														<option value="firstclass">First Class</option>
@@ -63,20 +63,19 @@
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
 													<label for="class">Dewasa   :</label>
-													<select name="adult" class="cs-select cs-skin-border">
-														<option value="1" disabled selected>1</option>
-														<option value="1">1</option>
-														<option value="2">2</option>
-														<option value="3">3</option>
-                          	<option value="4">4</option>
-													</select>
+													<select class="form-control" name="adult" >
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+														</select>
 												</section>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
 													<label for="class">Anak-anak    :</label>
-													<select name="child" class="cs-select cs-skin-border">
-														<option value="0" disabled selected>0</option>
+													<select name="child" class="form-control">
+														<option value="0">0</option>
 														<option value="1">1</option>
 														<option value="2">2</option>
 														<option value="3">3</option>
@@ -87,46 +86,46 @@
 											</div>
 											<div class="col-xs-12">
 												<input type="submit" class="btn btn-primary btn-block" value="Cari Pesawat">
-											</form>
 											</div>
+										</form>
 										</div>
 									 </div>
 
 									 <div role="tabpanel" class="tab-pane" id="roundtrip">
 									 	<div class="row">
-                       <div class="col-xxs-12 col-xs-6 mt">
-										<form class="" action="{{ url('/flight/find') }}" method="post">
+                    <div class="col-xxs-12 col-xs-6 mt">
+										<form class="" action="{{ url('/train/find') }}" method="post">
 											{{ csrf_field() }}
 
 											<input type="hidden" name="type_trip" value="Round_Trip">
                        <div class="input-field">
                            <label for="from">Dari :</label>
-                           <input type="text" name="from" class="form-control" id="from-place" placeholder="Kota/Bandara"/>
+                           <input type="text" name="from" class="form-control"placeholder="Kota/Bandara"/>
                        </div>
                    </div>
                    <div class="col-xxs-12 col-xs-6 mt">
                        <div class="input-field">
                            <label for="from">Tujuan   :</label>
-                           <input type="text" name="destination" class="form-control" id="to-place" placeholder="Kota/Bandara"/>
+                           <input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
                        </div>
                    </div>
                    <div class="col-xxs-12 col-xs-6 mt alternate">
                        <div class="input-field">
                            <label for="date-start">Tanggal Berangkat  :</label>
-                           <input type="text" name="departure_date[]" class="form-control" id="date-start" placeholder="mm/dd/yyyy"/>
+                           <input type="text" name="departure_date[]" class="form-control"  placeholder="mm/dd/yyyy"/>
                        </div>
                    </div>
                    <div class="col-xxs-12 col-xs-6 mt alternate">
                        <div class="input-field">
                            <label for="date-end">Tanggal Pulang   :</label>
-                           <input type="text" name="departure_date[]" class="form-control" id="date-end" placeholder="mm/dd/yyyy"/>
+                           <input type="text" name="departure_date[]" class="form-control"  placeholder="mm/dd/yyyy"/>
                        </div>
                    </div>
                    <div class="col-sm-12 mt">
                        <section>
                            <label for="class">Kelas   :</label>
-                           <select class="class" class="cs-select cs-skin-border">
-                               <option value="" disabled selected>Pilih Kelas</option>
+                           <select name="class" class="form-control">
+                               <option value="">Pilih Kelas</option>
                                <option value="ekonomi">Ekonomi</option>
                                <option value="bisnis">Bisnis</option>
                                <option value="firstclass">First Class</option>
@@ -135,9 +134,9 @@
                    </div>
                    <div class="col-xxs-12 col-xs-6 mt">
                        <section>
-                           <label for="class">Dewasa  :</label>
-                           <select name="adult" class="cs-select cs-skin-border">
-                               <option value="1" disabled selected>1</option>
+                           <label >Dewasa  :</label>
+                           <select name="adult" class="form-control">
+                               <option value="1">1</option>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>
@@ -149,7 +148,7 @@
                        <section>
                            <label for="class">Anak-anak   :</label>
                            <select name="child" class="cs-select cs-skin-border">
-                               <option value="0" disabled selected>0</option>
+                               <option value="0">0</option>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>

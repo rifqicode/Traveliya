@@ -35,7 +35,11 @@ class TrainController extends Controller
 
           ]);
 
-        $dep_date = $request->input('departure_date');
+        return $request;
+
+        $departure = $request->input('departure_date');
+        $dep_date = $departure[0];
+        $return_date = $departure[1];
         $type_trip = $request->input('type_trip');
         $class = $request->input('class');
         $from = $request->input('from');
@@ -43,11 +47,13 @@ class TrainController extends Controller
         $adult = $request->input('adult');
         $child = $request->input('child');
 
+
         // return $dep_date.$class.$from.$destination.$adult.$child;
-        if ( $adult <= $child ) {
+        if (  $child > $adult ) {
             flash('Anak Anak tidak boleh lebih dari orang dewasa');
             return redirect('/train');
         } else {
+
           $find = DB::table('trains as A')
                   ->join('stations as B', 'a.from', '=', 'b.id_station')
                   ->join('stations as C', 'a.destination', '=', 'c.id_station')
@@ -55,16 +61,20 @@ class TrainController extends Controller
                                         'class' => $class ,
                                         'from' => $from ,
                                         'destination' => $destination])->get();
+
+          // $find = Train::trainList($dep_date[0] , $class , $from , $destination);
+
+          // return $find."<br>".$back;
           if (count($find) == 0) {
             flash("Kereta tidak ditemukan");
             return redirect('/train');
           } else {
-            return view('findtrain',compact('find' , 'adult' ,'child' , 'type_trip'));
+            return view('findtrain', compact('find' , 'adult' , 'from' , 'destination'
+                                            ,'child' , 'type_trip' , 'class'
+                                            , 'dep_date' , 'return_date' , 'dep_date'));
           }
         }
 
-        // $find = Train::where('from' , $from);
-        // return json_encode($find);
     }
 
 

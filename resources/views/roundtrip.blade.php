@@ -10,16 +10,14 @@
 
                   @foreach($find as $dtrain)
 
-                  <form class="" action="{{ url('train/booking/'.$dtrain->id_train)}}" method="post">
+                  <form class="" action="{{ url('train/booking/'.$idDepTrain.'/'.$dtrain->id_train)}}" method="post">
                     {{ csrf_field() }}
 
                     <input type="hidden" name="dep_date" value="{{ $dep_date }}">
-                    <input type="hidden" name="class" value="{{ $class }}">
-                    <input type="text" name="from" value="{{ $from }}">
-                    <input type="text" name="destination" value="{{ $destination }}">
                     <input type="hidden" name="return_date" value="{{ $return_date }}">
                     <input type="hidden" name="adult" value="{{ $adult }}">
                     <input type="hidden" name="child" value="{{ $child }}">
+                    <input type="hidden" name="from" value="{{ $dtrain->from }}">
                     <input type="text" name="type_trip" value="{{ $type_trip }}">
                     <input type="hidden" name="destination" value="{{ $dtrain->destination }}">
                     <div class="card" style="width: 20rem;">
