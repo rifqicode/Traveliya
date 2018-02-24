@@ -61,6 +61,9 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
+                                    <a href="{{ route('editprofile') }}">
+                                            Edit Profile 
+                                        </a>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

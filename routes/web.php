@@ -23,6 +23,10 @@ Route::get('/plane', function () {
 Route::get('/train', function () {
     return view('trains');
 });
+Route::get('/editprofile', function () {
+    return view('editprofile');
+});
+
 
 
 Auth::routes();
