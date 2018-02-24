@@ -35,12 +35,15 @@ class TrainController extends Controller
 
           ]);
 
-        return $request;
 
         $departure = $request->input('departure_date');
         $dep_date = $departure[0];
-        $return_date = $departure[1];
         $type_trip = $request->input('type_trip');
+        if ($type_trip == "Round_Trip") {
+          $return_date = $departure[1];
+        } else {
+          $return_date = $departure[0];
+        }
         $class = $request->input('class');
         $from = $request->input('from');
         $destination = $request->input('destination');

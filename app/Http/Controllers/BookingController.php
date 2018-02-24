@@ -112,4 +112,13 @@ class BookingController extends Controller
                                       , 'type_trip' , 'idTrain2'));
 
   }
+
+  public function listBooking(Request $request)
+  {
+
+    $id = Auth::user()->id;
+    $list = Trainticket::list($id);
+    return $list;
+
+  }
 }

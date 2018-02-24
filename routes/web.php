@@ -17,11 +17,10 @@ Route::get('/', function () {
 Route::get('/index', function () {
     return view('welcome');
 });
-Route::get('/pesawat', function () {
-  flash('test');
+Route::get('/plane', function () {
     return view('pesawat');
 });
-Route::get('/kereta', function () {
+Route::get('/train', function () {
     return view('trains');
 });
 
@@ -38,7 +37,7 @@ Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');
 
 // train
-Route::get('/train', 'TrainController@index')->name('train');
+// Route::get('/train', 'TrainController@index')->name('train');
 Route::post('/train/find' , 'TrainController@findTrain');
 Route::post('/train/booking/{id}' , 'BookingController@bookingView');
 // Round Trip
@@ -46,3 +45,5 @@ Route::post('/train/booking/{idTrain1}/{idTrain2}' , 'BookingController@RoundTri
 // Booking form
 Route::post('/TrainBooking' , 'BookingController@BookingForm');
 Route::post('/TrainBooking/roundtrip' , 'BookingController@BookingForm');
+
+Route::get('/bookinglist' , 'BookingController@listBooking');
