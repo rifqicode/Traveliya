@@ -4,7 +4,7 @@
 
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/dark.jpg);">
+			<div class="fh5co-cover" data-stellar-background-ratio="0.5" style="background-image: url(images/train.jpg);">
 				<div class="desc">
 					<div class="container">
 						<div class="row">
@@ -45,7 +45,7 @@
 											<div class="col-sm-12 mt">
 												<div class="input-field">
 													<label for="date-start">Tanggal Berangkat   :</label>
-													<input type="date" name="departure_date" class="form-control" />
+													<input type="date" name="departure_date[]" class="form-control" />
 												</div>
 											</div>
 
@@ -98,67 +98,70 @@
 											{{ csrf_field() }}
 
 											<input type="hidden" name="type_trip" value="Round_Trip">
-                       <div class="input-field">
-                           <label for="from">Dari :</label>
-                           <input type="text" name="from" class="form-control"placeholder="Kota/Bandara"/>
-                       </div>
-                   </div>
-                   <div class="col-xxs-12 col-xs-6 mt">
-                       <div class="input-field">
-                           <label for="from">Tujuan   :</label>
-                           <input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
-                       </div>
-                   </div>
-                   <div class="col-xxs-12 col-xs-6 mt alternate">
-                       <div class="input-field">
-                           <label for="date-start">Tanggal Berangkat  :</label>
-                           <input type="text" name="departure_date[]" class="form-control"  placeholder="mm/dd/yyyy"/>
-                       </div>
-                   </div>
-                   <div class="col-xxs-12 col-xs-6 mt alternate">
-                       <div class="input-field">
-                           <label for="date-end">Tanggal Pulang   :</label>
-                           <input type="text" name="departure_date[]" class="form-control"  placeholder="mm/dd/yyyy"/>
-                       </div>
-                   </div>
-                   <div class="col-sm-12 mt">
-                       <section>
-                           <label for="class">Kelas   :</label>
-                           <select name="class" class="form-control">
-                               <option value="">Pilih Kelas</option>
-                               <option value="ekonomi">Ekonomi</option>
-                               <option value="bisnis">Bisnis</option>
-                               <option value="firstclass">First Class</option>
-                           </select>
-                       </section>
-                   </div>
-                   <div class="col-xxs-12 col-xs-6 mt">
-                       <section>
-                           <label >Dewasa  :</label>
-                           <select name="adult" class="form-control">
-                               <option value="1">1</option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                               <option value="4">4</option>
-                           </select>
-                       </section>
-                   </div>
-                   <div class="col-xxs-12 col-xs-6 mt">
-                       <section>
-                           <label for="class">Anak-anak   :</label>
-                           <select name="child" class="cs-select cs-skin-border">
-                               <option value="0">0</option>
-                               <option value="1">1</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                               <option value="4">4</option>
-                           </select>
-                       </section>
-                   </div>
-                   <div class="col-xs-12">
-                       <input type="submit" class="btn btn-primary btn-block" value="Cari Pesawat">
-                   </div>
+											<div class="input-field">
+												<label for="from">Dari  :</label>
+												<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/>
+											</div>
+										</div>
+										<div class="col-xxs-12 col-xs-6 mt">
+											<div class="input-field">
+												<label for="from">Tujuan    :</label>
+												<input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
+											</div>
+										</div>
+
+										<div class="col-sm-12 mt">
+											<div class="input-field">
+												<label for="date-start">Tanggal Berangkat   :</label>
+												<input type="date" name="departure_date[]" class="form-control" />
+											</div>
+										</div>
+
+										<div class="col-sm-12 mt">
+											<div class="input-field">
+												<label for="date-start">Tanggal Pulang   :</label>
+												<input type="date" name="departure_date[]" class="form-control" />
+											</div>
+										</div>
+
+										<div class="col-sm-12 mt">
+											<section>
+												<label for="class">Kelas    :</label>
+												<select name="class" class="form-control">
+													<option value="">Pilih Kelas</option>
+													<option value="ekonomi">Ekonomi</option>
+													<option value="Bisnis">Bisnis</option>
+													<option value="firstclass">First Class</option>
+												</select>
+											</section>
+										</div>
+										<div class="col-xxs-12 col-xs-6 mt">
+											<section>
+												<label for="class">Dewasa   :</label>
+												<select class="form-control" name="adult" >
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+													</select>
+											</section>
+										</div>
+										<div class="col-xxs-12 col-xs-6 mt">
+											<section>
+												<label for="class">Anak-anak    :</label>
+												<select name="child" class="form-control">
+													<option value="0">0</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+
+												</select>
+											</section>
+										</div>
+										<div class="col-xs-12">
+											<input type="submit" class="btn btn-primary btn-block" value="Cari Pesawat">
+										</div>
 								 </form>
                </div>
             </div>

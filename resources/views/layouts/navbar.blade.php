@@ -84,11 +84,32 @@
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="{{ url('/index') }}">Home</a></li>
 
-							<li><a href="{{ url('/pesawat') }}">Pesawat</a></li>
-							<li><a href="{{ url('/kereta') }}">Kereta</a></li>
+							<li><a href="{{ url('/plane') }}">Pesawat</a></li>
+							<li><a href="{{ url('/train') }}">Kereta</a></li>
+							@guest
 							<li><a href="{{ route('login') }}">Login</a></li>
               <li ><a href="{{ route('register') }}">Register</a></li>
+							@else
+							<li ><a href="{{ url('bookinglist') }}"> Booking List &nbsp <span class="label label-primary">Primary</span></a></li>
+							<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+											{{ Auth::user()->name }}
+									</a>
+									<ul class="dropdown-menu">
+											<li>
+													<a href="{{ route('logout') }}"
+															onclick="event.preventDefault();
+																			 document.getElementById('logout-form').submit();">
+															Logout
+													</a>
 
+													<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+															{{ csrf_field() }}
+													</form>
+											</li>
+									</ul>
+							</li>
+							@endguest
 						</ul>
 					</nav>
 				</div>
