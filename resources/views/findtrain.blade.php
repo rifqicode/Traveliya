@@ -1,7 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
 @section('content')
     <div class="row">
+      <br>
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Train</div>
@@ -15,15 +16,15 @@
 
                     <input type="hidden" name="dep_date" value="{{ $dep_date }}">
                     <input type="hidden" name="class" value="{{ $class }}">
-                    <input type="text" name="from" value="{{ $from }}">
-                    <input type="text" name="destination" value="{{ $destination }}">
+                    <input type="hidden" name="from" value="{{ $from }}">
+                    <input type="hidden" name="destination" value="{{ $destination }}">
                     <input type="hidden" name="return_date" value="{{ $return_date }}">
                     <input type="hidden" name="adult" value="{{ $adult }}">
                     <input type="hidden" name="child" value="{{ $child }}">
-                    <input type="text" name="type_trip" value="{{ $type_trip }}">
+                    <input type="hidden" name="type_trip" value="{{ $type_trip }}">
                     <input type="hidden" name="destination" value="{{ $dtrain->destination }}">
+
                     <div class="card" style="width: 20rem;">
-                      <img class="card-img-top" src="..." alt="Card image cap">
                       <div class="card-block">
                         <h4 class="card-title">{{ $dtrain->train }}</h4>
                         <p class="card-text">Dari :{{ $dtrain->from }}</p>

@@ -19,7 +19,7 @@ class TrainController extends Controller
     {
       $alldatas = Train::all();
       // return json_encode($alldatas);
-      return view('train')->with('datas' , $alldatas);
+      return view('trains')->with('datas' , $alldatas);
     }
 
     public function findTrain(Request $request)
