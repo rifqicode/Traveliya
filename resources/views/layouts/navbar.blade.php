@@ -44,26 +44,28 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
 
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="{{ asset ('css/icomoon.css') }}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="{{ asset ('css/bootstrap.css') }}">
 	<!-- Superfish -->
-	<link rel="stylesheet" href="css/superfish.css">
+	<link rel="stylesheet" href="{{ asset('css/superfish.css')}}">
 	<!-- Magnific Popup -->
-	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
 	<!-- Date Picker -->
-	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<link rel="stylesheet" href="{{ asset('css/bootstrap-datepicker.min.css') }}">
 	<!-- CS Select -->
-	<link rel="stylesheet" href="css/cs-select.css">
-	<link rel="stylesheet" href="css/cs-skin-border.css">
+	<link rel="stylesheet" href="{{ asset('css/cs-select.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/cs-skin-border.css') }}">
 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+	<link rel="stylesheet" href="{{ asset('jquery-ui.css') }}" type="text/css"/>
 
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -82,15 +84,25 @@
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
-							<li><a href="{{ url('/index') }}">Home</a></li>
+							<li><a href="{{ url('/') }}">Home</a></li>
 
 							<li><a href="{{ url('/plane') }}">Pesawat</a></li>
 							<li><a href="{{ url('/train') }}">Kereta</a></li>
+
 							@guest
+
 							<li><a href="{{ route('login') }}">Login</a></li>
               <li ><a href="{{ route('register') }}">Register</a></li>
+
 							@else
-							<li ><a href="{{ url('bookinglist') }}"> Booking List &nbsp <span class="label label-primary">Primary</span></a></li>
+
+							@if(Entrust::hasRole('admin'))
+							<li ><a href="{{ url('admin') }}">Admin Page</a></li>
+							@endif
+
+							@inject('count' , 'App\Http\Controllers\HomeController')
+
+							<li role="presentation"><a href="{{ url('bookinglist') }}"> Booking List &nbsp <span class="badge">{{ $count->count() }}</span></a></li>
 							<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >
 											{{ Auth::user()->name }}
@@ -121,32 +133,45 @@
     @yield('content')
 
 
-    <script src="js/jquery.min.js"></script>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- jQuery Easing -->
-    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
     <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <!-- Waypoints -->
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/sticky.js"></script>
+    <script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('js/sticky.js') }}"></script>
 
     <!-- Stellar -->
-    <script src="js/jquery.stellar.min.js"></script>
+    <script src="{{ asset('js/jquery.stellar.min.js') }}"></script>
     <!-- Superfish -->
-    <script src="js/hoverIntent.js"></script>
-    <script src="js/superfish.js"></script>
+    <script src="{{ asset('js/hoverIntent.js') }}"></script>
+    <script src="{{ asset('js/superfish.js') }}"></script>
     <!-- Magnific Popup -->
-    <script src="js/jquery.magnific-popup.min.js"></script>
-    <script src="js/magnific-popup-options.js"></script>
+    <script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{{ asset('js/magnific-popup-options.js') }}"></script>
     <!-- Date Picker -->
-    <script src="js/bootstrap-datepicker.min.js"></script>
+    <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
     <!-- CS Select -->
-    <script src="js/classie.js"></script>
-    <script src="js/selectFx.js"></script>
+    <script src="{{ asset('js/classie.js') }}"></script>
+    <script src="{{ asset('js/selectFx.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
+		<script src="{{ asset('jquery-1.10.2.js')}}" type="text/javascript"></script>
+ 		<script src="{{ asset('jquery-ui.js') }}" type="text/javascript"></script>
 
+		<script>
+			$( function() {
+				$( "#datepicker" ).datepicker({
+					 format: "dd-mm-yy",
+					 startDate: "+1d",
+					 autoclose: true,
+					 endDate: "+90d"
+				});
+
+			} );
+		</script>
     </body>
   </html>
 

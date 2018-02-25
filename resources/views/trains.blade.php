@@ -45,7 +45,7 @@
 											<div class="col-sm-12 mt">
 												<div class="input-field">
 													<label for="date-start">Tanggal Berangkat   :</label>
-													<input type="date" name="departure_date[]" class="form-control" />
+													<input type="text" id="datepicker" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
 												</div>
 											</div>
 
@@ -85,7 +85,7 @@
 												</section>
 											</div>
 											<div class="col-xs-12">
-												<input type="submit" class="btn btn-primary btn-block" value="Cari Pesawat">
+												<input type="submit" class="btn btn-primary btn-block" value="Cari Kereta">
 											</div>
 										</form>
 										</div>

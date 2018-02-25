@@ -12,17 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/index', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/plane', function () {
-    return view('pesawat');
+    return view('plane');
 });
-Route::get('/train', function () {
-    return view('trains');
-});
+Route::get('/train', 'TrainController@index');
+
 Route::get('/editprofile', function () {
     return view('editprofile');
 });
@@ -31,11 +27,11 @@ Route::get('/editprofile', function () {
 
 Auth::routes();
 
+// Users Verification
 Route::get('/verifikasi', 'VerifikasiController@index')->name('verifikasi');
-
 Route::get('/user/verify', 'VerifikasiController@confirm')->name('userverify');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/testing', 'HomeController@index');
 // Plane
 Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');
@@ -49,5 +45,10 @@ Route::post('/train/booking/{idTrain1}/{idTrain2}' , 'BookingController@RoundTri
 // Booking form
 Route::post('/TrainBooking' , 'BookingController@BookingForm');
 Route::post('/TrainBooking/roundtrip' , 'BookingController@BookingForm');
-
+// view booking
 Route::get('/bookinglist' , 'BookingController@listBooking');
+
+
+Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+    Route::get('/', 'AdminController@index');
+});
