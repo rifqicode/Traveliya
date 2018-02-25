@@ -366,7 +366,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-testimonial" style="background-image:url(images/img_bg_1.jpg);">
+		<div id="fh5co-testimonial" style="background-image:url(images/train.jpg);">
 		<div class="container">
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
