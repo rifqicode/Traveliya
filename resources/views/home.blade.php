@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    Dashboard cui
+                    Dashboard cuisfdd
                 </div>
             </div>
         </div>
