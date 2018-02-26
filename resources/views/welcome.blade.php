@@ -4,7 +4,7 @@
 
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover" data-stellar-background-ratio="0" style="background-image: url(images/dark.jpg);">
+			<div class="fh5co-cover" data-stellar-background-ratio="0" style="background-image: url(images/travel2.jpg);">
 				<div class="desc">
 					<div class="container">
 						<div class="row">
