@@ -36,7 +36,7 @@
                         <input type="text" placeholder="Name" name="name[]" >
                         <input type="text" placeholder="Email" name="email[]">
                         <input type="text" placeholder="No KTP" name="no_ktp[]">
-                        <input type="date" placeholder="Tanggal Lahir" name="born_date[]">
+                        <input type="text" id="born_date" placeholder="Tanggal Lahir" name="born_date[]">
                     @endfor
 
                     <br>

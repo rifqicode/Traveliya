@@ -2,19 +2,6 @@
 
 @section('content')
 
-<<<<<<< HEAD
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
-
-                <div class="panel-body">
-                    Dashboard cuisfdd
-                </div>
-            </div>
-        </div>
-    </div>
-=======
 		<div class="fh5co-hero">
 			<div class="fh5co-overlay"></div>
 			<div class="fh5co-cover" data-stellar-background-ratio="0" style="background-image: url(images/travel2.jpg);">
@@ -267,5 +254,4 @@
 	</div>
 	<!-- END fh5co-wrapper -->
 
->>>>>>> 94bdde8e22b7bb643f239bf0607cde13ce0d2fe4
 @endsection

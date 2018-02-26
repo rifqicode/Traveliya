@@ -164,12 +164,28 @@
 		<script>
 			$( function() {
 				$( "#datepicker" ).datepicker({
-					 format: "dd-mm-yy",
+					 format: "yyyy-mm-dd",
 					 startDate: "+1d",
 					 autoclose: true,
 					 endDate: "+90d"
 				});
+				
+				
+				$( "#born_date" ).datepicker({
+					 format: "dd-mm-yyyy",
+					 startView: 2,
+					 			 
+				});
 
+				$('#payment_via').on('change',function(){
+					if( $(this).val()==="BCA"){
+					$("#otherType").show()
+					}
+					else{
+					$("#otherType").hide()
+					}
+				});
+				
 			} );
 		</script>
     </body>
