@@ -17,11 +17,20 @@ Route::get('/', function () {
 Route::get('/plane', function () {
     return view('plane');
 });
+<<<<<<< HEAD
+// Route::get('/editprofile', function () {
+//     return view('editprofile');
+// });
+=======
+<<<<<<< HEAD
+=======
 Route::get('/train', 'TrainController@index');
 
 Route::get('/editprofile', function () {
     return view('editprofile');
 });
+>>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
+>>>>>>> 94bdde8e22b7bb643f239bf0607cde13ce0d2fe4
 
 
 
