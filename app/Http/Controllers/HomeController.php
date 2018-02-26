@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use DB;
+use App\Trainticket;
+
 
 class HomeController extends Controller
 {
@@ -13,9 +15,10 @@ class HomeController extends Controller
      *
      * @return void
      */
+
     public function __construct()
     {
-        $this->middleware('verify');
+
     }
 
     /**
@@ -26,11 +29,12 @@ class HomeController extends Controller
 
      public function index()
      {
-      $traindatas = ['0' => '1', '1' => '2'];
-
-       for ($i=0; $i < 2; $i++) {
-         echo $traindatas[$i];
-       }
+        // empty
+     }
+     public function count()
+     {
+       $count = Trainticket::list_count(Auth::user()->id);
+       return $count;
      }
 
 }
