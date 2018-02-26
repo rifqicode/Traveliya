@@ -48,6 +48,10 @@ Route::post('/TrainBooking/roundtrip' , 'BookingController@BookingForm');
 // view booking
 Route::get('/bookinglist' , 'BookingController@listBooking');
 
+// Payment
+Route::get('/payment/{id_trainticket}', 'PaymentController@index');
+Route::post('/payment/pay' , 'PaymentController@pay');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
