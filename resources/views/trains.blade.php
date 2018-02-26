@@ -32,27 +32,27 @@
 													{{ csrf_field() }}
 													<input type="hidden" name="type_trip" value="Single_Trip">
 												<div class="input-field">
-													<label for="from">Dari  :</label>
-													<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/>
+													<label for="from"><a>Dari  :</a></label>
+													<input type="text" name="from" class="form-control" placeholder="Kota/Stasiun"/>
 
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from">Tujuan    :</label>
-													<input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
+													<label for="from"><a>Tujuan    :</a></label>
+													<input type="text" name="destination" class="form-control"placeholder="Kota/Stasiun"/>
 												</div>
 											</div>
 											<div class="col-sm-12 mt">
 												<div class="input-field">
-													<label for="date-start">Tanggal Berangkat   :</label>
+													<label for="date-start"><a>Tanggal Berangkat   :</a></label>
 													<input type="text" id="datepicker" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
 												</div>
 											</div>
 
 											<div class="col-sm-12 mt">
 												<section>
-													<label for="class">Kelas    :</label>
+													<label for="class"><a>Kelas    :</a></label>
 													<select name="class" class="form-control">
 														<option value="">Pilih Kelas</option>
 														<option value="ekonomi">Ekonomi</option>
@@ -62,8 +62,9 @@
 												</section>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
+												
 												<section>
-													<label for="class">Dewasa   :</label>
+													<label for="class"><a>Dewasa   :</a></label>
 													<select class="form-control" name="adult" >
 															<option value="1">1</option>
 															<option value="2">2</option>
@@ -74,7 +75,7 @@
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<section>
-													<label for="class">Anak-anak    :</label>
+													<label for="class"><a>Anak-anak    :</a></label>
 													<select name="child" class="form-control">
 														<option value="0">0</option>
 														<option value="1">1</option>
@@ -100,34 +101,37 @@
 
 											<input type="hidden" name="type_trip" value="Round_Trip">
 											<div class="input-field">
-												<label for="from">Dari  :</label>
-												<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/>
+												<label for="from"><a>Dari  :</a></label>
+												<input type="text" name="from" class="form-control" placeholder="Kota/Stasiun"/>
 											</div>
 										</div>
 										<div class="col-xxs-12 col-xs-6 mt">
 											<div class="input-field">
-												<label for="from">Tujuan    :</label>
-												<input type="text" name="destination" class="form-control"placeholder="Kota/Bandara"/>
+												<label for="from"><a>Tujuan    :</a></label>
+												<input type="text" name="destination" class="form-control"placeholder="Kota/Stasiun"/>
 											</div>
 										</div>
 
 										<div class="col-sm-12 mt">
 											<div class="input-field">
-												<label for="date-start">Tanggal Berangkat   :</label>
-												<input type="date" name="departure_date[]" class="form-control" />
+												<label for="date-start"><a>Tanggal Berangkat   :</a></label>
+												<input type="date" id="datepicker" name="departure_date[]" class="form-control" />
 											</div>
 										</div>
-
+										
+										
+									
+									
 										<div class="col-sm-12 mt">
 											<div class="input-field">
-												<label for="date-start">Tanggal Pulang   :</label>
-												<input type="date" name="departure_date[]" class="form-control" />
+												<label for="date-start"><a>Tanggal Pulang   :</a></label>
+												<input type="date" id="datepicker" name="departure_date[]" class="form-control" />
 											</div>
 										</div>
 
 										<div class="col-sm-12 mt">
 											<section>
-												<label for="class">Kelas    :</label>
+												<label for="class"><a>Kelas    :</a></label>
 												<select name="class" class="form-control">
 													<option value="">Pilih Kelas</option>
 													<option value="ekonomi">Ekonomi</option>
@@ -138,7 +142,7 @@
 										</div>
 										<div class="col-xxs-12 col-xs-6 mt">
 											<section>
-												<label for="class">Dewasa   :</label>
+												<label for="class"><a>Dewasa   :</a></label>
 												<select class="form-control" name="adult" >
 														<option value="1">1</option>
 														<option value="2">2</option>
@@ -149,7 +153,7 @@
 										</div>
 										<div class="col-xxs-12 col-xs-6 mt">
 											<section>
-												<label for="class">Anak-anak    :</label>
+												<label for="class"><a>Anak-anak    :</a></label>
 												<select name="child" class="form-control">
 													<option value="0">0</option>
 													<option value="1">1</option>
@@ -173,11 +177,7 @@
 							</div>
 							<div class="desc2 animate-box">
 								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-									<p>HandCrafted by </p>
-									<h2>Exclusive Limited Time Offer</h2>
-									<h3>Fly to Hong Kong via Los Angeles, USA</h3>
-									<span class="price">$599</span>
-									<!-- <p><a class="btn btn-primary btn-lg" href="#">Get Started</a></p> -->
+									
 								</div>
 							</div>
 						</div>
@@ -192,13 +192,12 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-						<h3>Book A Flight</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<h3>Book A Train</h3>
 					</div>
 				</div>
 				<div class="row row-bottom-padded-md">
 					<div class="col-md-12 animate-box">
-						<h2 class="heading-title">Todays Flight Deal</h2>
+						<h2 class="heading-title"></h2>
 					</div>
 					<div class="col-md-6 animate-box">
 						<div class="row">
