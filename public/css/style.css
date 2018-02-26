@@ -11,6 +11,7 @@
 *	Edit this section
 *
 * ======================================================= */
+}
 body {
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.6;
@@ -48,6 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   margin: 0 0 30px 0;
 }
+
 
 figure {
   margin-bottom: 2em;
@@ -156,7 +158,9 @@ figure {
   
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3e1c', endColorstr='#ff8c00', GradientType=1 );
 }
-
+.nav-font{
+  font-size: 40px;
+}
 .fh5co-cover {
   background-size: cover;
   position: relative;
@@ -256,7 +260,7 @@ figure {
 }
 
 .sf-menu a {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.50);
   padding: 0.75em 1em !important;
   font-weight: normal;
   border-left: none;
@@ -351,13 +355,14 @@ figure {
   left: 0;
   width: 100%;
   z-index: 1022;
-  background: #fff;
+  background: #161616;
 }
 
 .nav-header {
   position: relative;
   float: left;
   width: 100%;
+  background-color: #161616;
 }
 
 #fh5co-logo {
@@ -376,7 +381,7 @@ figure {
   left: 0;
   font-size: 16px;
   color: #F78536;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(255, 255, 255, 0.06);
   padding: 10px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -537,7 +542,7 @@ figure {
   box-shadow: 0px 43px 83px -20px rgba(0, 0, 0, 0.41);
 }
 .tabulation label {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 248, 248, 0.50);
   font-size: 14px;
 }
 @media screen and (max-width: 480px) {
