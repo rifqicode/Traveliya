@@ -18,15 +18,13 @@ Route::get('/plane', function () {
     return view('plane');
 });
 
-<<<<<<< HEAD
  Route::get('/editprofile', function () {
      return view('editprofile');
  });
-=======
+
 // Route::get('/editprofile', function () {
 //     return view('editprofile');
 // });
->>>>>>> d93b742214030a882a0880f619418e46b177785e
 
 Route::get('/train', 'TrainController@index');
 
@@ -69,4 +67,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
     Route::get('/createTrain', 'AdminController@index');
 });
-
