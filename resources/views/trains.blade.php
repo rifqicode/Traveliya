@@ -32,11 +32,9 @@
 													{{ csrf_field() }}
 													<input type="hidden" name="type_trip" value="Single_Trip">
 												<div class="input-field">
-													<!-- <label for="from">Dari  :</label>
-													<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/> -->
-													<select class="select2 item-id form-control" name="from">
-																<option value="1">asdasd</option>
-													</select>
+													<label for="from">Dari  :</label>
+													<input type="text" name="from" class="form-control" placeholder="Kota/Bandara"/>
+
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">

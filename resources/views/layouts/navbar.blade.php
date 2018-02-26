@@ -164,12 +164,16 @@
 		<script>
 			$( function() {
 				$( "#datepicker" ).datepicker({
-					 format: "dd-mm-yy",
+					 format: "yyyy-mm-dd",
 					 startDate: "+1d",
 					 autoclose: true,
 					 endDate: "+90d"
 				});
-
+				
+				
+				$( "#born_date" ).datepicker({
+					 format: "yyyy-mm-dd",			 
+				});
 			} );
 		</script>
     </body>
