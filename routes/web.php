@@ -24,9 +24,6 @@ Route::get('/pesawat', function () {
 Route::get('/kereta', function () {
     return view('trains');
 });
-Route::get('/editprofile', function () {
-    return view('editprofile');
-});
 
 
 
