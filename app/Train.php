@@ -7,7 +7,7 @@ use DB;
 
 class Train extends Model
 {
-  protected $fillable = ['train'];
+
   protected $primaryKey = 'id_train';
   public $timestamps = false;
     public static function trainList($dep_date , $class , $from , $destination)
@@ -17,6 +17,15 @@ class Train extends Model
                                     'class' => $class ,
                                     'from' => $from ,
                                     'destination' => $destination])->get();
+      return $find;
+    }
+
+    public static function update($id, $data)
+    {
+      $find = DB::table('trains')
+                  ->where('id_train' , $id)
+                  ->update($data);
+      
       return $find;
     }
 }

@@ -85,7 +85,7 @@ class AdminController extends Controller
 
       $id = $request->id;
 
-      Train::find($id)->update($data);
+      Train::update($id,$data);
       return redirect('admin/trainrute')->with('success','berhasil diubah');
 
     }
