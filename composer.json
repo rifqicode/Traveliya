@@ -10,7 +10,11 @@
         "laracasts/flash": "^3.0",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
+<<<<<<< HEAD
         "uxweb/sweet-alert": "^1.4",
+=======
+        "yajra/laravel-datatables-oracle": "^8.4",
+>>>>>>> 877815039b7feab36703f3ad05e0a479c99d2279
         "zizaco/entrust": " 5.2.x-dev"
     },
     "require-dev": {

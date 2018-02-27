@@ -7,6 +7,7 @@ use DB;
 
 class Train extends Model
 {
+  public $timestamps = false;
     public static function trainList($dep_date , $class , $from , $destination)
     {
       $find = DB::table('trains as A')
