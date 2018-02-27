@@ -4,7 +4,10 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "330ecf871c2987549ebf156b5472811d",
+=======
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
     "content-hash": "3774b4364a0be8f6487cc96ae47e3c2e",
     "packages": [
         {
@@ -105,7 +108,11 @@
                 "singularize",
                 "string"
             ],
+<<<<<<< HEAD
             "time": "2018-01-09 20:05:19"
+=======
+            "time": "2018-01-09T20:05:19+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "doctrine/lexer",
@@ -593,7 +600,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2018-02-22 19:56:29"
+=======
+            "time": "2018-02-22T19:56:29+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "laravel/tinker",
@@ -740,7 +751,11 @@
                 "sftp",
                 "storage"
             ],
+<<<<<<< HEAD
             "time": "2018-01-27 16:03:56"
+=======
+            "time": "2018-01-27T16:03:56+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "monolog/monolog",
@@ -1434,7 +1449,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-29 09:03:43"
+=======
+            "time": "2018-01-29T09:03:43+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/css-selector",
@@ -1487,7 +1506,11 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-03 07:38:00"
+=======
+            "time": "2018-01-03T07:38:00+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/debug",
@@ -1543,7 +1566,11 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-18 22:16:57"
+=======
+            "time": "2018-01-18T22:16:57+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1606,7 +1633,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-03 07:38:00"
+=======
+            "time": "2018-01-03T07:38:00+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/finder",
@@ -1709,7 +1740,11 @@
             ],
             "description": "Symfony HttpFoundation Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-29 09:03:43"
+=======
+            "time": "2018-01-29T09:03:43+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/http-kernel",
@@ -1797,7 +1832,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-29 12:29:46"
+=======
+            "time": "2018-01-29T12:29:46+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1856,7 +1895,11 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "time": "2018-01-30 19:27:44"
+=======
+            "time": "2018-01-30T19:27:44+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/polyfill-php70",
@@ -1915,7 +1958,11 @@
                 "portable",
                 "shim"
             ],
+<<<<<<< HEAD
             "time": "2018-01-30 19:27:44"
+=======
+            "time": "2018-01-30T19:27:44+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/process",
@@ -1964,7 +2011,11 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-29 09:03:43"
+=======
+            "time": "2018-01-29T09:03:43+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/routing",
@@ -2042,7 +2093,11 @@
                 "uri",
                 "url"
             ],
+<<<<<<< HEAD
             "time": "2018-01-16 18:03:57"
+=======
+            "time": "2018-01-16T18:03:57+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/translation",
@@ -2110,7 +2165,11 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2018-01-18 22:16:57"
+=======
+            "time": "2018-01-18T22:16:57+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "symfony/var-dumper",
@@ -2179,7 +2238,11 @@
                 "debug",
                 "dump"
             ],
+<<<<<<< HEAD
             "time": "2018-01-29 09:03:43"
+=======
+            "time": "2018-01-29T09:03:43+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "tijsverkoyen/css-to-inline-styles",
@@ -2276,7 +2339,11 @@
                 "env",
                 "environment"
             ],
+<<<<<<< HEAD
             "time": "2016-09-01 10:05:43"
+=======
+            "time": "2016-09-01T10:05:43+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "zizaco/entrust",
@@ -2344,7 +2411,11 @@
                 "permission",
                 "roles"
             ],
+<<<<<<< HEAD
             "time": "2016-12-29 06:25:06"
+=======
+            "time": "2016-12-29T06:25:06+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         }
     ],
     "packages-dev": [
@@ -2400,7 +2471,11 @@
                 "constructor",
                 "instantiate"
             ],
+<<<<<<< HEAD
             "time": "2017-07-22 11:58:36"
+=======
+            "time": "2017-07-22T11:58:36+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "filp/whoops",
@@ -2876,7 +2951,11 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+<<<<<<< HEAD
             "time": "2017-11-30 07:14:17"
+=======
+            "time": "2017-11-30T07:14:17+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -2986,7 +3065,11 @@
                 "spy",
                 "stub"
             ],
+<<<<<<< HEAD
             "time": "2018-02-19 10:16:54"
+=======
+            "time": "2018-02-19T10:16:54+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3319,7 +3402,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2018-02-01 05:57:37"
+=======
+            "time": "2018-02-01T05:57:37+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3487,7 +3574,11 @@
                 "compare",
                 "equality"
             ],
+<<<<<<< HEAD
             "time": "2018-02-01 13:46:46"
+=======
+            "time": "2018-02-01T13:46:46+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "sebastian/diff",
@@ -3980,7 +4071,11 @@
                 }
             ],
             "description": "Give thanks (in the form of a GitHub ⭐) to your fellow PHP package maintainers (not limited to Symfony components)!",
+<<<<<<< HEAD
             "time": "2018-02-02 13:47:40"
+=======
+            "time": "2018-02-02T13:47:40+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         },
         {
             "name": "theseer/tokenizer",
@@ -4070,7 +4165,11 @@
                 "check",
                 "validate"
             ],
+<<<<<<< HEAD
             "time": "2018-01-29 19:49:41"
+=======
+            "time": "2018-01-29T19:49:41+00:00"
+>>>>>>> f7b2dd59a60e9da923a3740abaf017b04f31bfda
         }
     ],
     "aliases": [],

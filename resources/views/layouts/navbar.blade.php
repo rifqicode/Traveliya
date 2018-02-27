@@ -172,8 +172,20 @@
 				
 				
 				$( "#born_date" ).datepicker({
-					 format: "yyyy-mm-dd",			 
+					 format: "dd-mm-yyyy",
+					 startView: 2,
+					 			 
 				});
+
+				$('#payment_via').on('change',function(){
+					if( $(this).val()==="BCA"){
+					$("#otherType").show()
+					}
+					else{
+					$("#otherType").hide()
+					}
+				});
+				
 			} );
 		</script>
     </body>
