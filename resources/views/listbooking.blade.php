@@ -17,9 +17,8 @@
                         <td>Adult</td>
                         <td>Child</td>
                         <td>Status</td>
-                        <td>Option</td>
                     </tr>
-                    @foreach($list as $l)                    
+                    @foreach($list as $l)
                     <tr>
 
                         <td>{{ $l->name }}</td>
@@ -27,10 +26,16 @@
                         <td>{{ $l->ticket_code }}</td>
                         <td>{{ $l->adult }}</td>
                         <td>{{ $l->child }}</td>
-                        <td>{{ $l->status }}</td>
-                        <td><a href="{{ url('payment/'.$l->id_trainticket) }}" class="btn btn-primary">Pay</a></td>
+
+                        @if($l->status === 0)
+                        <td><a href="{{ url('payment/'.$l->id_trainticket) }}" class="btn btn-danger">Pay</a></td>
+                        @elseif($l->status == 1)
+                        <td><a href="{{ url('payment/pay/showpay/'.$l->id_trainticket) }}" class="btn btn-info">Info</a></td>
+                        @else
+                        <td><a href="{{ url('payment/'.$l->id_trainticket) }}" class="btn btn-success"> Show Ticket </a></td>
+                        @endif
                     </tr>
-                    @endforeach   
+                    @endforeach
                 </table>
                 </div>
             </div>

@@ -26,4 +26,23 @@ class Trainticket extends Model
 
       return $count;
     }
+
+    public static function showTicket($id_trainticket)
+    {
+       $show = DB::table('traintickets')
+                ->join('trains' , 'trains.id_train' , '=' , 'traintickets.id_train')
+                ->where('traintickets.id_trainticket' , '=' , $id_trainticket)->get();
+
+      return $show;
+    }
+
+
+    public static function updateStatus($id_trainticket , $status)
+    {
+       $show = DB::table('traintickets')
+                ->where('traintickets.id_trainticket' , '=' , $id_trainticket)
+                ->update(['status' => $status]);
+
+      return $show;
+    }
 }

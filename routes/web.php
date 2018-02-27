@@ -34,7 +34,6 @@ Route::get('/editprofile', function () {
 
 
 
-
 Auth::routes();
 
 // Users Verification
@@ -61,9 +60,20 @@ Route::get('/bookinglist' , 'BookingController@listBooking');
 // Payment
 Route::get('/payment/{id_trainticket}', 'PaymentController@index');
 Route::post('/payment/pay' , 'PaymentController@pay');
+Route::get('/payment/pay/showpay/{id_trainticket}' , 'PaymentController@showpay');
+Route::get('/payment/pay/{code}' , 'PaymentController@apiPayment');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
-    Route::get('/createTrain', 'AdminController@index');
+    Route::get('/station', 'AdminController@viewstation');
+    Route::post('/station/createStation', 'AdminController@createStation');
+    Route::get('/train', 'AdminController@viewtrain');
+    Route::get('/trainrute', 'AdminController@trainrute');
+    Route::post('/train/createTrain', 'AdminController@createTrain');
+    Route::put('/train/editTrain', 'AdminController@editTrain');
+
+
+
 });
+

@@ -18,8 +18,8 @@ class CreateTrainsTable extends Migration
           $table->string('train');
           $table->string('class');
           $table->date('departure_date');
-          $table->integer('from');
-          $table->integer('destination');
+          $table->string('from');
+          $table->string('destination');
           $table->time('hours');
           $table->integer('max');
           $table->integer('price');

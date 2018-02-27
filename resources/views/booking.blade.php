@@ -41,7 +41,9 @@
 
                     <br>
                     <br>
+                    <p align="right">
                     <input  type="submit"  class="btn btn-primary" value="Booking">
+                    </p>
 
                   </form>
                 </div>
