@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "4a4007c2767cd50b06a4f2ce7801acd9",
-=======
     "content-hash": "3774b4364a0be8f6487cc96ae47e3c2e",
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -108,11 +104,7 @@
                 "singularize",
                 "string"
             ],
-<<<<<<< HEAD
             "time": "2018-01-09T20:05:19+00:00"
-=======
-            "time": "2017-07-22T12:18:28+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         },
         {
             "name": "doctrine/lexer",
@@ -600,11 +592,7 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
-            "time": "2018-02-06T15:36:55+00:00"
-=======
             "time": "2018-02-22T19:56:29+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         },
         {
             "name": "laravel/tinker",
@@ -1449,11 +1437,7 @@
         },
         {
             "name": "symfony/css-selector",
-<<<<<<< HEAD
             "version": "v4.0.4",
-=======
-            "version": "v3.4.4",
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
@@ -1502,11 +1486,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "time": "2018-01-03T07:38:00+00:00"
-=======
-            "time": "2018-01-03T07:37:34+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         },
         {
             "name": "symfony/debug",
@@ -1566,11 +1546,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-<<<<<<< HEAD
             "version": "v4.0.4",
-=======
-            "version": "v3.4.4",
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/event-dispatcher.git",
@@ -1629,11 +1605,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
-<<<<<<< HEAD
             "time": "2018-01-03T07:38:00+00:00"
-=======
-            "time": "2018-01-03T07:37:34+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         },
         {
             "name": "symfony/finder",
@@ -2304,8 +2276,6 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
-<<<<<<< HEAD
-=======
         },
         {
             "name": "zizaco/entrust",
@@ -2374,7 +2344,6 @@
                 "roles"
             ],
             "time": "2016-12-29T06:25:06+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         }
     ],
     "packages-dev": [
@@ -2430,11 +2399,7 @@
                 "constructor",
                 "instantiate"
             ],
-<<<<<<< HEAD
             "time": "2017-07-22T11:58:36+00:00"
-=======
-            "time": "2015-06-14T21:17:01+00:00"
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
         },
         {
             "name": "filp/whoops",
@@ -3273,16 +3238,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "6.5.6",
+            "version": "6.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3330ef26ade05359d006041316ed0fa9e8e3cefe"
+                "reference": "6bd77b57707c236833d2b57b968e403df060c9d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3330ef26ade05359d006041316ed0fa9e8e3cefe",
-                "reference": "3330ef26ade05359d006041316ed0fa9e8e3cefe",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/6bd77b57707c236833d2b57b968e403df060c9d9",
+                "reference": "6bd77b57707c236833d2b57b968e403df060c9d9",
                 "shasum": ""
             },
             "require": {
@@ -3353,7 +3318,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2018-02-01T05:57:37+00:00"
+            "time": "2018-02-26T07:01:09+00:00"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
