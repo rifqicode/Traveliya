@@ -11,7 +11,7 @@
                   @foreach($find as $dplane)
                   <div class="card" style="width: 20rem;">
                       <img class="card-img-top" src="..." alt="Card image cap">
-                      <div class="card-block">
+                      <div class="input-field">
                         <h4 class="card-title">{{ $dplane->airplane }}</h4>
                         <p class="card-text">Dari :{{ $dplane->from }}</p>
                         <p class="card-text">Tujuan :{{ $dplane->destination }}</p>

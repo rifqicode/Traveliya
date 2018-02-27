@@ -260,8 +260,9 @@ figure {
 }
 
 .sf-menu a {
-  color: rgba(255, 255, 255, 0.50);
+  color: rgba(255, 255, 255, 0.94);
   padding: 0.75em 1em !important;
+  margin-top: 20px;
   font-weight: normal;
   border-left: none;
   border-top: none;
@@ -269,7 +270,6 @@ figure {
   text-decoration: none;
   zoom: 1;
   font-size: 16px;
-  border-bottom: none !important;
   font-weight: bold;
 }
 .sf-menu a:hover, .sf-menu a:focus {
@@ -355,14 +355,15 @@ figure {
   left: 0;
   width: 100%;
   z-index: 1022;
-  background: #161616;
+  background: #0E0E0E;
 }
 
 .nav-header {
   position: relative;
+  padding-top: 0px;
   float: left;
   width: 100%;
-  background-color: #161616;
+  background-color: #0E0E0E;
 }
 
 #fh5co-logo {
@@ -370,10 +371,11 @@ figure {
   z-index: 2;
   font-size: 28px;
   text-transform: uppercase;
-  margin-top: 35px;
+  margin-top: 0px;
   font-weight: 700;
   float: left;
-  padding-left: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 #fh5co-logo i {
   position: absolute;
@@ -382,11 +384,7 @@ figure {
   font-size: 16px;
   color: #F78536;
   background: rgba(255, 255, 255, 0.06);
-  padding: 10px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
+  
 }
 #fh5co-logo a {
   color: #F78536;
@@ -400,10 +398,10 @@ figure {
   z-index: 2;
   display: block;
   float: right;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 #fh5co-menu-wrap .sf-menu a {
-  padding: 1em .75em;
+  padding: ;
 }
 
 #fh5co-primary-menu > li > ul li.active > a {
@@ -953,6 +951,9 @@ div.cs-select span {
   width: 100%;
   margin-bottom: 40px;
   position: relative;
+}
+.logo{
+ 
 }
 .feature-left .icon {
   float: left;
