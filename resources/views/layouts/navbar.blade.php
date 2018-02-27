@@ -61,9 +61,13 @@
 
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-	<link rel="stylesheet" href="{{ asset('jquery-ui.css') }}" type="text/css"/>
+	<link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}" type="text/css"/>
+
+	<link rel="stylesheet" href="{{ asset('css/select2.min.css') }}" type="text/css"/>
+	<link rel="stylesheet" href="{{ asset('css/select2.css') }}" type="text/css"/>
 
 
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 	<!-- Modernizr JS -->
 	<script src="{{ asset('js/modernizr-2.6.2.min.js') }}"></script>
 	<!-- FOR IE9 below -->
@@ -80,7 +84,13 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+<<<<<<< HEAD
 					<h1 id="fh5co-logo"><a href="{{ url('/index') }}"><img class="logo" src="images/traveliya_adam2.png" ></a></h1>
+=======
+					<div class="logo wow FadeinLeft">
+					<a href="{{ url('/index') }}"><img src="images/train_roman.png" alt=""></a>
+					</div>
+>>>>>>> ec88349c2e6a7052cda3c6de79420d57d5145077
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
@@ -102,7 +112,7 @@
 
 							@inject('count' , 'App\Http\Controllers\HomeController')
 
-							<li role="presentation"><a href="{{ url('bookinglist') }}"> Booking List &nbsp <span class="badge">{{ $count->count() }}</span></a></li>
+							<li role="presentation"><a href="{{ url('bookinglist') }}"> Booking List <span class="badge">{{ $count->count() }}</span></a></li>
 							<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" >
 											{{ Auth::user()->name }}
@@ -133,6 +143,9 @@
     @yield('content')
 
 
+
+		<script src="{{ asset('js/select2.min.js') }}"></script>
+
     <script src="{{ asset('js/jquery.min.js') }}"></script>
     <!-- jQuery Easing -->
     <script src="{{ asset('js/jquery.easing.1.3.js') }}"></script>
@@ -160,6 +173,7 @@
     <script src="{{ asset('js/main.js') }}"></script>
 		<script src="{{ asset('jquery-1.10.2.js')}}" type="text/javascript"></script>
  		<script src="{{ asset('jquery-ui.js') }}" type="text/javascript"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 		<script>
 			$( function() {
@@ -169,12 +183,12 @@
 					 autoclose: true,
 					 endDate: "+90d"
 				});
-				
-				
+
+
 				$( "#born_date" ).datepicker({
 					 format: "dd-mm-yyyy",
 					 startView: 2,
-					 			 
+
 				});
 
 				$('#payment_via').on('change',function(){
@@ -185,7 +199,17 @@
 					$("#otherType").hide()
 					}
 				});
-				
+
+				// In your Javascript (external .js resource or <script> tag)
+				// $(document).ready(function() {
+				//     $('.js-example-basic-single').select2();
+				// });
+
+				$("#js-example-basic-single").select2();
+				$("#js-example-basic-double").select2();
+
+
+
 			} );
 		</script>
     </body>

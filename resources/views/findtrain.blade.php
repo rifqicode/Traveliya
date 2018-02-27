@@ -6,10 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Train</div>
-
+                @foreach($find as $dtrain)
                 <div class="panel-body">
 
-                  @foreach($find as $dtrain)
 
                   <form class="" action="{{ url('train/booking/'.$dtrain->id_train)}}" method="post">
                     {{ csrf_field() }}
@@ -24,19 +23,21 @@
                     <input type="hidden" name="type_trip" value="{{ $type_trip }}">
                     <input type="hidden" name="destination" value="{{ $dtrain->destination }}">
 
-                    <div class="card" style="width: 20rem;">
+                    <div class="card" style="width: 80rem;">
                       <div class="card-block">
-                        <h4 class="card-title">{{ $dtrain->train }}</h4>
-                        <p class="card-text">Dari :{{ $dtrain->from }}</p>
-                        <p class="card-text">Tujuan :{{ $dtrain->destination }}</p>
-                        <input type="submit" class="btn btn-primary" value="Order">
+                        <h4 class="card-title">Kereta {{ $dtrain->train }}</h4>
+                        <p class="card-text">Dari : {{ $dtrain->from }}</p>
+                        <p class="card-text">Tujuan : {{ $dtrain->destination }}</p>
+                        <p class="card-text">Harga : {{ $dtrain->price }} / orang </p>
+                            <input type="submit" class="btn btn-primary" value="Order">
                       </div>
                     </div>
 
                   </form>
                       <br>
-                  @endforeach
                 </div>
+                @endforeach
+
             </div>
         </div>
     </div>

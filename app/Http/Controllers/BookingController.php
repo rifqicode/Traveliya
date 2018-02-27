@@ -52,6 +52,8 @@ class BookingController extends Controller
         $no_ktp = $request->input('no_ktp');
         $borndate = $request->input('born_date');
 
+        // return $request;
+
         if ($type_trip == "Round_Trip") {
           $idTrain1 = $request->input('idTrain1');
           $idTrain2 = $request->input('idTrain2');
@@ -62,7 +64,7 @@ class BookingController extends Controller
             $dTrainticket->id_users = Auth::user()->id;
             $dTrainticket->id_train = $traindatas[$i];
             $dTrainticket->type_trip = $type_trip;
-            $dTrainticket->ticket_code = str_random(10);
+            $dTrainticket->ticket_code = "-";
             $dTrainticket->no_telp = $no_telp;
             $dTrainticket->adult = $adult;
             $dTrainticket->child = $child;
@@ -74,7 +76,7 @@ class BookingController extends Controller
           $dTrainticket->id_users = Auth::user()->id;
           $dTrainticket->id_train = $idtrain;
           $dTrainticket->type_trip = $type_trip;
-          $dTrainticket->ticket_code = str_random(10);
+          $dTrainticket->ticket_code = "-";
           $dTrainticket->no_telp = $no_telp;
           $dTrainticket->adult = $adult;
           $dTrainticket->child = $child;
@@ -83,7 +85,7 @@ class BookingController extends Controller
 
           for ($i=0; $i < $adult ; $i++) {
               $dPassenger = new DetailPassenger();
-              $dPassenger->id_trainticket = $idtrain;
+              $dPassenger->id_trainticket = $dTrainticket->id;
               $dPassenger->name_passenger = $name[$i];
               $dPassenger->email_passenger = $email[$i];
               $dPassenger->no_ktp = $no_ktp[$i];
@@ -118,7 +120,6 @@ class BookingController extends Controller
 
     $id = Auth::user()->id;
     $list = Trainticket::list($id);
-    // return $list;
     return view('listbooking')->with('list' , $list);
 
   }
