@@ -104,10 +104,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-          <li>
-          <a href="{{ url('admin/trainrute') }}">
-            </i> <span>Train Rute</span>
-          </a>
+          <li><a href="{{ url('admin/trainrute') }}"><i class="fa fa-circle-o"></i> <span>Train Rute</span></a>
         </li>
           </ul>
         </li>

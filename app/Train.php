@@ -7,6 +7,8 @@ use DB;
 
 class Train extends Model
 {
+  protected $fillable = ['train'];
+  protected $primaryKey = 'id_train';
   public $timestamps = false;
     public static function trainList($dep_date , $class , $from , $destination)
     {

@@ -61,6 +61,35 @@ class AdminController extends Controller
 
     }
 
+    public function editrute($id)
+    {
+
+      $showTrain = Train::where('id_train' , $id)->get();
+      $showStation = Station::all();
+      return view('admin.editrute', compact('showTrain' , 'showStation' , 'id'));
+
+    }
+    public function UpdateTrain(Request $request)
+    {
+
+      $data = $this->validate($request,[
+        'train'=>'required',
+        'class'=>'required',
+        'departure_date'=>'required',
+        'from'=>'required',
+        'destination'=>'required',
+        'hours'=>'required',
+        'max'=>'required',
+        'price'=>'required',
+      ]);
+
+      $id = $request->id;
+
+      Train::find($id)->update($data);
+      return redirect('admin/trainrute')->with('success','berhasil diubah');
+
+    }
+
 
 
 }
