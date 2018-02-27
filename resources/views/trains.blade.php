@@ -67,6 +67,7 @@
 												</div>
 											</div>
 
+
 											<div class="col-sm-12 mt">
 												<section>
 													<label for="class"><a>Kelas    :</a></label>
@@ -118,33 +119,49 @@
 
 											<input type="hidden" name="type_trip" value="Round_Trip">
 											<div class="input-field">
+
 												<label for="from"><a>Dari  :</a></label>
-												<input type="text" name="from" class="form-control" placeholder="Kota/Stasiun"/>
+
+												<select id="js-example-basic-three" class="form-control" name="from">
+													<option disabled selected value></option>
+
+													@foreach($datas as $station)
+													<option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+													@endforeach
+												</select>
+
 											</div>
 										</div>
 										<div class="col-xxs-12 col-xs-6 mt">
 											<div class="input-field">
-												<label for="from"><a>Tujuan    :</a></label>
-												<input type="text" name="destination" class="form-control"placeholder="Kota/Stasiun"/>
-											</div>
-										</div>
+												<label for="from"><a>Tujuan  :</a></label>
 
+												<select id="js-example-basic-four" class="form-control" name="destination">
+													<option disabled selected value></option>
+
+													@foreach($datas as $station)
+													<option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+													@endforeach
+												</select>
+
+										</div>
+									</div>
 										<div class="col-sm-12 mt">
 											<div class="input-field">
 												<label for="date-start"><a>Tanggal Berangkat   :</a></label>
-												<input type="date" id="datepicker" name="departure_date[]" class="form-control" />
+												<input type="text" id="datepicker2" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
 											</div>
 										</div>
-
-
 
 
 										<div class="col-sm-12 mt">
 											<div class="input-field">
 												<label for="date-start"><a>Tanggal Pulang   :</a></label>
-												<input type="date" id="datepicker" name="departure_date[]" class="form-control" />
+												<input type="text" id="datepicker3" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
 											</div>
 										</div>
+
+
 
 										<div class="col-sm-12 mt">
 											<section>
@@ -158,6 +175,7 @@
 											</section>
 										</div>
 										<div class="col-xxs-12 col-xs-6 mt">
+
 											<section>
 												<label for="class"><a>Dewasa   :</a></label>
 												<select class="form-control" name="adult" >
@@ -182,7 +200,7 @@
 											</section>
 										</div>
 										<div class="col-xs-12">
-											<input type="submit" class="btn btn-primary btn-block" value="Cari Pesawat">
+											<input type="submit" class="btn btn-primary btn-block" value="Cari Kereta">
 										</div>
 								 </form>
                </div>

@@ -90,7 +90,6 @@
 						<ul class="sf-menu" id="fh5co-primary-menu">
 							<li><a href="{{ url('/') }}">Home</a></li>
 
-							<li><a href="{{ url('/plane') }}">Pesawat</a></li>
 							<li><a href="{{ url('/train') }}">Kereta</a></li>
 
 							@guest
@@ -178,6 +177,20 @@
 					 endDate: "+90d"
 				});
 
+				$( "#datepicker2" ).datepicker({
+					 format: "yyyy-mm-dd",
+					 startDate: "+1d",
+					 autoclose: true,
+					 endDate: "+90d"
+				});
+
+				$( "#datepicker3" ).datepicker({
+					 format: "yyyy-mm-dd",
+					 startDate: "+1d",
+					 autoclose: true,
+					 endDate: "+90d"
+				});
+
 
 				$( ".born_date").datepicker({
 					 format: "dd-mm-yyyy",
@@ -201,6 +214,8 @@
 
 				$("#js-example-basic-single").select2();
 				$("#js-example-basic-double").select2();
+				$("#js-example-basic-three").select2();
+				$("#js-example-basic-four").select2();
 
 
 

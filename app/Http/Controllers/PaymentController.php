@@ -41,7 +41,7 @@ class PaymentController extends Controller
         $ticket = Trainticket::updateStatus($request->id_trainticket , $status , $code);
 
 
-        flash('Silahkan Lakukan Pembayaran di'.$request->payment_via);
+        flash('Silahkan Lakukan Pembayaran di'.''.$request->payment_via);
         return redirect('/');
 
     }
@@ -77,8 +77,8 @@ class PaymentController extends Controller
 
       $showPas = DetailPassenger::countPas($id_trainticket);
 
-      $price = $price * $showPas;
-
+      $price = number_format($price * $showPas,2,",",".");
+      // number_format($price * $showPas,2);
       $cek = Payment::infoPayment($id , $id_trainticket);
 
        return view('showpayment' , compact('cek' , 'price'));

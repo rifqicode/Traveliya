@@ -57,10 +57,10 @@
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
 
-           
+
             </ul>
           </li>
-         
+
         </ul>
       </div>
     </nav>
@@ -75,7 +75,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>{{ Auth::user()->name }}</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -151,7 +151,7 @@
     <!-- /.content -->
   </div>
 
-  
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -216,6 +216,6 @@
       'autoWidth'   : false
     })
   })
-</script>   
+</script>
 </body>
 </html>
