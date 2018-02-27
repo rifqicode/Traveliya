@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use App\Train as Train;
+use App\Station as Station;
 use DB;
 
 class TrainController extends Controller
@@ -17,19 +18,18 @@ class TrainController extends Controller
 
     public function index()
     {
-      $alldatas = Train::all();
+      $alldatas = Station::all();
       // return json_encode($alldatas);
       return view('trains')->with('datas' , $alldatas);
     }
 
     public function findTrain(Request $request)
     {
+
         $validatedData = $request->validate([
               'departure_date' => 'required',
               'type_trip' => 'required',
               'class' => 'required',
-              'from' => 'required',
-              'destination' => 'required',
               'adult' => 'required',
               'child' => 'required',
 
@@ -57,24 +57,15 @@ class TrainController extends Controller
             return redirect('/train');
         } else {
 
-          $find = DB::table('trains as A')
-                  ->join('stations as B', 'a.from', '=', 'b.id_station')
-                  ->join('stations as C', 'a.destination', '=', 'c.id_station')
-                  ->where(['departure_date' => $dep_date ,
-                                        'class' => $class ,
-                                        'from' => $from ,
-                                        'destination' => $destination])->get();
+          $find = Train::trainList($dep_date , $class , $from , $destination);
 
-          // $find = Train::trainList($dep_date[0] , $class , $from , $destination);
-
-          // return $find."<br>".$back;
           if (count($find) == 0) {
             flash("Kereta tidak ditemukan");
             return redirect('/train');
           } else {
             return view('findtrain', compact('find' , 'adult' , 'from' , 'destination'
                                             ,'child' , 'type_trip' , 'class'
-                                            , 'dep_date' , 'return_date' , 'dep_date'));
+                                            , 'dep_date' , 'return_date' , 'dep_date' , 'station'));
           }
         }
 

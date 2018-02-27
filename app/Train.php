@@ -10,8 +10,8 @@ class Train extends Model
     public static function trainList($dep_date , $class , $from , $destination)
     {
       $find = DB::table('trains as A')
-              ->join('stations as B', 'a.from', '=', 'b.id_station')
-              ->join('stations as C', 'a.destination', '=', 'c.id_station')
+              ->join('stations as B', 'a.from', '=', 'b.station_name')
+              ->join('stations as C', 'a.destination', '=', 'c.station_name')
               ->where(['departure_date' => $dep_date ,
                                     'class' => $class ,
                                     'from' => $from ,

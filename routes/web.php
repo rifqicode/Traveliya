@@ -61,6 +61,8 @@ Route::get('/bookinglist' , 'BookingController@listBooking');
 // Payment
 Route::get('/payment/{id_trainticket}', 'PaymentController@index');
 Route::post('/payment/pay' , 'PaymentController@pay');
+Route::get('/payment/pay/showpay/{id_trainticket}' , 'PaymentController@showpay');
+Route::get('/payment/pay/{code}' , 'PaymentController@apiPayment');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {

@@ -28,21 +28,38 @@
 									 <div role="tabpanel" class="tab-pane active" id="singletrip">
 										<div class="row">
 											<div class="col-xxs-12 col-xs-6 mt">
-												<form class="" action="{{ url('/train/find')}}" method="post">
-													{{ csrf_field() }}
-													<input type="hidden" name="type_trip" value="Single_Trip">
+												<form action="{{ url('/train/find')}}" method="post">
+												{{ csrf_field() }}
+
+												<input type="hidden" name="type_trip" value="Single_Trip">
 												<div class="input-field">
+
 													<label for="from"><a>Dari  :</a></label>
-													<input type="text" name="from" class="form-control" placeholder="Kota/Stasiun"/>
+
+													<select id="js-example-basic-single" class="form-control" name="from">
+														<option disabled selected value></option>
+
+														@foreach($datas as $station)
+													  <option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+														@endforeach
+													</select>
 
 												</div>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
 												<div class="input-field">
-													<label for="from"><a>Tujuan    :</a></label>
-													<input type="text" name="destination" class="form-control"placeholder="Kota/Stasiun"/>
-												</div>
+													<label for="from"><a>Tujuan  :</a></label>
+
+													<select id="js-example-basic-double" class="form-control" name="destination">
+														<option disabled selected value></option>
+
+														@foreach($datas as $station)
+														<option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+														@endforeach
+													</select>
+
 											</div>
+										</div>
 											<div class="col-sm-12 mt">
 												<div class="input-field">
 													<label for="date-start"><a>Tanggal Berangkat   :</a></label>
@@ -62,7 +79,7 @@
 												</section>
 											</div>
 											<div class="col-xxs-12 col-xs-6 mt">
-												
+
 												<section>
 													<label for="class"><a>Dewasa   :</a></label>
 													<select class="form-control" name="adult" >
@@ -118,10 +135,10 @@
 												<input type="date" id="datepicker" name="departure_date[]" class="form-control" />
 											</div>
 										</div>
-										
-										
-									
-									
+
+
+
+
 										<div class="col-sm-12 mt">
 											<div class="input-field">
 												<label for="date-start"><a>Tanggal Pulang   :</a></label>
@@ -177,7 +194,7 @@
 							</div>
 							<div class="desc2 animate-box">
 								<div class="col-sm-7 col-sm-push-1 col-md-7 col-md-push-1">
-									
+
 								</div>
 							</div>
 						</div>
