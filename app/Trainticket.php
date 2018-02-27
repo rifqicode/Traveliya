@@ -37,7 +37,16 @@ class Trainticket extends Model
     }
 
 
-    public static function updateStatus($id_trainticket , $status , $code)
+    public static function updateStatus($id_trainticket , $status)
+    {
+       $show = DB::table('traintickets')
+                ->where('traintickets.id_trainticket' , '=' , $id_trainticket)
+                ->update(['status' => $status]);
+
+      return $show;
+    }
+
+    public static function updatePayment($id_trainticket , $status , $code)
     {
        $show = DB::table('traintickets')
                 ->where('traintickets.id_trainticket' , '=' , $id_trainticket)

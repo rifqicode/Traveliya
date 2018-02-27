@@ -38,11 +38,11 @@ class PaymentController extends Controller
 
         $status = 1;
         $code = str_random(10);
-        $ticket = Trainticket::updateStatus($request->id_trainticket , $status , $code);
+        $ticket = Trainticket::updateStatus($request->id_trainticket , $status);
 
 
-        flash('Silahkan Lakukan Pembayaran di'.''.$request->payment_via);
-        return redirect('/');
+        flash('Silahkan Lakukan Pembayaran di'.' '.$request->payment_via);
+        return redirect('/bookinglist');
 
     }
 
@@ -51,13 +51,19 @@ class PaymentController extends Controller
         $check = Payment::findCode($code);
         // return $check;
         foreach ($check as $c ) {
+          $id_payment = $c->id_payment;
           $id_trainticket = $c->id_trainticket;
         }
 
         $id_users = Auth::user()->id;
         $status = 2;
+        $code = str_random(10);
         $pay = Payment::checkPayment($id_trainticket , $id_users , $status);
+        $ticket = Trainticket::updatePayment($id_trainticket , $status , $code);
+
+        flash('Pembayaran Sukses');
         return redirect('/bookinglist');
+
     }
 
 

@@ -170,7 +170,14 @@
 
 		<script>
 			$( function() {
-				$( "#datepicker" ).datepicker({
+				$( "#datepicker10" ).datepicker({
+					 format: "yyyy-mm-dd",
+					 startDate: "+1d",
+					 autoclose: true,
+					 endDate: "+90d"
+				});
+
+				$( "#datepicker9" ).datepicker({
 					 format: "yyyy-mm-dd",
 					 startDate: "+1d",
 					 autoclose: true,

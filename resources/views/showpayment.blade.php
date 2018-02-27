@@ -40,18 +40,23 @@
                             </div>
                         </div>
 
-                          <div class="col-sm-12 mt">
-                              <div class="input-field">
-                                <label for=""> Payment Via : {{ $c->pay_via }}</label>
-
-                              </div>
+                        <div class="col-sm-12 mt">
+                          <div class="input-field">
+                             Payment Via
                           </div>
-
-                            <div class="col-sm-12 mt">
-                                <div class="input-field">
-                                  <label for=""> Tanggal Pembayaran : {{ $c->created_at }}</label>
-                                </div>
+                            <div class="input-field">
+                              <font size="5">{{ $c->pay_via }}</font>
                             </div>
+                        </div>
+
+                        <div class="col-sm-12 mt">
+                          <div class="input-field">
+                          Tanggal Pembayaran
+                          </div>
+                            <div class="input-field">
+                              <font size="5">{{ $c->created_at }}</font>
+                            </div>
+                        </div>
                             @endforeach
                       </div>
                     </div>
