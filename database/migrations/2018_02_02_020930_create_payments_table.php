@@ -19,7 +19,7 @@ class CreatePaymentsTable extends Migration
           $table->integer('id_users');
           $table->string('pay_code');
           $table->string('pay_via');
-          $table->string('no_rekening')->default('NULL');
+          $table->string('no_rekening')->nullable();
           $table->timestamps();
         });
     }

@@ -63,7 +63,7 @@
 											<div class="col-sm-12 mt">
 												<div class="input-field">
 													<label for="date-start"><a>Tanggal Berangkat   :</a></label>
-													<input type="text" id="datepicker" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
+													<input type="text" id="datepicker10" placeholder="dd-mm-yyyy"name="departure_date[]" class="form-control" />
 												</div>
 											</div>
 

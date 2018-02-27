@@ -21,17 +21,21 @@
                     <input type="hidden" name="type_trip" value="{{ $type_trip }}">
 
                     <h4>Data Kontak</h4>
-                    <input type="text" placeholder="Name" name="name_contact" value="{{ Auth::user()->name }}">
-                    <input type="text" placeholder="Email" name="email_contact" value="{{ Auth::user()->email }}">
-                    <input type="text" placeholder="No_Telp" name="no_telp">
+                    <input type="text" class="form-control" placeholder="Name" name="name_contact" value="{{ Auth::user()->name }}">
+                    <input type="text" class="form-control" placeholder="Email" name="email_contact" value="{{ Auth::user()->email }}">
+                    <input type="number" class="form-control" placeholder="No_Telp" name="no_telp">
 
                     @for($a=1; $a<= $adult; $a++)
+                    <br>
                         <h4>Data Penumpang</h4>
-                        <input type="text" placeholder="Name" name="name" >
-                        <input type="text" placeholder="Email" name="email">
-                        <input type="text" placeholder="No KTP" name="no_ktp">
-                        <input type="date" placeholder="Tanggal Lahir" name="born_date">
+                        <input type="text" class="form-control" placeholder="Name" name="name[]" >
+                        <input type="text" class="form-control" placeholder="Email" name="email[]">
+                        <input type="text" class="form-control"placeholder="No KTP" name="no_ktp[]">
+                        <input type="date" class="form-control" placeholder="Tanggal Lahir" name="born_date[]">
                     @endfor
+
+                    <br>
+                    <br>
 
                     <input  type="submit"  class="btn btn-primary" value="Booking">
 

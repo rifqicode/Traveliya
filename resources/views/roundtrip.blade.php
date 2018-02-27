@@ -18,15 +18,16 @@
                     <input type="hidden" name="adult" value="{{ $adult }}">
                     <input type="hidden" name="child" value="{{ $child }}">
                     <input type="hidden" name="from" value="{{ $dtrain->from }}">
-                    <input type="text" name="type_trip" value="{{ $type_trip }}">
+                    <input type="hidden" name="type_trip" value="{{ $type_trip }}">
                     <input type="hidden" name="destination" value="{{ $dtrain->destination }}">
-                    <div class="card" style="width: 20rem;">
-                      <img class="card-img-top" src="..." alt="Card image cap">
+
+                    <div class="card" style="width: 80rem;">
                       <div class="card-block">
-                        <h4 class="card-title">{{ $dtrain->train }}</h4>
-                        <p class="card-text">Dari :{{ $dtrain->from }}</p>
-                        <p class="card-text">Tujuan :{{ $dtrain->destination }}</p>
-                        <input type="submit" class="btn btn-primary" value="Order">
+                        <h4 class="card-title">Kereta {{ $dtrain->train }}</h4>
+                        <p class="card-text">Dari : {{ $dtrain->from }}</p>
+                        <p class="card-text">Tujuan : {{ $dtrain->destination }}</p>
+                        <p class="card-text">Harga : {{ $dtrain->price }} / orang </p>
+                            <input type="submit" class="btn btn-primary" value="Order">
                       </div>
                     </div>
 
