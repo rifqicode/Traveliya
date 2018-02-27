@@ -118,7 +118,8 @@ class BookingController extends Controller
 
     $id = Auth::user()->id;
     $list = Trainticket::list($id);
-    return $list;
+    // return $list;
+    return view('listbooking')->with('list' , $list);
 
   }
 }

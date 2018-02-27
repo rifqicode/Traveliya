@@ -17,14 +17,21 @@ Route::get('/', function () {
 Route::get('/plane', function () {
     return view('plane');
 });
-<<<<<<< HEAD
-=======
+
+ Route::get('/editprofile', function () {
+     return view('editprofile');
+ });
+
+// Route::get('/editprofile', function () {
+//     return view('editprofile');
+// });
+
 Route::get('/train', 'TrainController@index');
 
 Route::get('/editprofile', function () {
     return view('editprofile');
 });
->>>>>>> 8f2ce8053ec179a1d66ca197b53bb978e97d5916
+
 
 
 
@@ -51,7 +58,12 @@ Route::post('/TrainBooking/roundtrip' , 'BookingController@BookingForm');
 // view booking
 Route::get('/bookinglist' , 'BookingController@listBooking');
 
+// Payment
+Route::get('/payment/{id_trainticket}', 'PaymentController@index');
+Route::post('/payment/pay' , 'PaymentController@pay');
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/', 'AdminController@index');
+    Route::get('/createTrain', 'AdminController@index');
 });

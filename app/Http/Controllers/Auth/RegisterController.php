@@ -69,7 +69,7 @@ class RegisterController extends Controller
 
         ]);
 
-        $user->attachRole(2);
+        $user->attachRole(1);
         return $user;
     }
 }
