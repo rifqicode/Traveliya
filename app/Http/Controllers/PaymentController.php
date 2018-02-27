@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Trainticket;
 use App\DetailPassenger;
 use App\Payment;
+use App\Train;
 use Auth;
 
 class PaymentController extends Controller
@@ -64,10 +65,23 @@ class PaymentController extends Controller
     {
 
       $id = Auth::user()->id;
-      $cek = Payment::infoPayment($id , $id_trainticket);
-      // return $cek;
+      $train = Trainticket::where('id_trainticket' , $id_trainticket)->get();
+      foreach ($train as $t) {
+        $id_train = $t->id_train;
+      }
 
-       return view('showpayment')->with('cek', $cek);
+      $findtrain = Train::where('id_train' , $id_train)->get();
+        foreach ($findtrain as $ft) {
+          $price = $ft->price;
+        }
+
+      $showPas = DetailPassenger::countPas($id_trainticket);
+
+      $price = $price * $showPas;
+
+      $cek = Payment::infoPayment($id , $id_trainticket);
+
+       return view('showpayment' , compact('cek' , 'price'));
     }
 
     public function showticket($id_trainticket)

@@ -30,7 +30,7 @@ class AdminController extends Controller
 
       return redirect('admin/station');
     }
-   
+
     public function viewtrain()
     {
       $showStation = Station::all();
@@ -48,8 +48,8 @@ class AdminController extends Controller
      $newtrain->max = $request->max;
      $newtrain->price = $request->price;
      $newtrain->save();
-     
-      
+
+
       return redirect('admin/train');
     }
 
@@ -58,9 +58,9 @@ class AdminController extends Controller
     {
       $showTrain = Train::all();
       return view('admin.trainrute' , compact('showTrain'));
-      
+
     }
-    
-    
-    
+
+
+
 }

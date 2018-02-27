@@ -15,4 +15,11 @@ class DetailPassenger extends Model
                          ->where('id_trainticket' , '=' , $id_trainticket)->get();
       return $showPas;
     }
+
+    public static function countPas($id_trainticket)
+    {
+      $showPas = DB::table('detail_passengers')
+                         ->where('id_trainticket' , '=' , $id_trainticket)->get()->count();
+      return $showPas;
+    }
 }

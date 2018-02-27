@@ -31,6 +31,15 @@
                             </div>
                         </div>
 
+                        <div class="col-sm-12 mt">
+                          <div class="input-field">
+                            <p align="center"> Biaya Pembayaran </p>
+                          </div>
+                            <div class="input-field">
+                              <p align="center"><font size="10">Rp . {{ $price }}</font></p>
+                            </div>
+                        </div>
+
                           <div class="col-sm-12 mt">
                               <div class="input-field">
                                 <label for=""> Payment Via : {{ $c->pay_via }}</label>
