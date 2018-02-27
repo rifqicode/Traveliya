@@ -15,8 +15,8 @@ class CreateDetailPassengersTable extends Migration
     {
         Schema::create('detail_passengers', function (Blueprint $table) {
             $table->increments('id_passenger');
-            $table->integer('id_trainticket')->default('NULL');
-            $table->integer('id_planeticket')->default('NULL');
+            $table->integer('id_trainticket')->default(NULL);
+            $table->integer('id_planeticket')->default(NULL);
             $table->string('name_passenger');
             $table->string('email_passenger');
             $table->string('no_ktp');
