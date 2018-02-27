@@ -84,17 +84,13 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-<<<<<<< HEAD
+
 					<h1 id="fh5co-logo"><a href="{{ url('/') }}"><i class="icon-airplane"></i>Traveliya</a></h1>
-=======
-<<<<<<< HEAD
 					<h1 id="fh5co-logo"><a href="{{ url('/index') }}"><img class="logo" src="images/traveliya_adam2.png" ></a></h1>
-=======
+
 					<div class="logo wow FadeinLeft">
-					<a href="{{ url('/index') }}"><img src="images/train_roman.png" alt=""></a>
+					<a href="{{ url('/index') }}"><img src="images/" alt=""></a>
 					</div>
->>>>>>> ec88349c2e6a7052cda3c6de79420d57d5145077
->>>>>>> 7968d60e23f9a6a561d13fea1c114acf5363ff10
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
