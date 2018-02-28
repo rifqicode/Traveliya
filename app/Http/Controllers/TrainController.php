@@ -72,4 +72,11 @@ class TrainController extends Controller
     }
 
 
+    public function deleterute($id){
+      $data = Train::where('id_train',$id)->first();
+      $data->delete();
+      return redirect('admin/trainrute')->with('alert-success','data berhasil dihapus');
+
+    }
+
 }

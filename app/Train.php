@@ -7,6 +7,8 @@ use DB;
 
 class Train extends Model
 {
+
+  protected $primaryKey = 'id_train';
   public $timestamps = false;
 
   protected $primaryKey = 'id_train';

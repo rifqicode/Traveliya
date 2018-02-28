@@ -76,7 +76,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/train', 'AdminController@viewtrain');
     Route::get('/trainrute', 'AdminController@trainrute');
     Route::post('/train/createTrain', 'AdminController@createTrain');
-    Route::put('/train/editTrain', 'AdminController@editTrain');
+    Route::get('/train/editrute/{id_train}', 'AdminController@editrute');
+    Route::post('/train/update', 'AdminController@UpdateTrain');
+    Route::delete('/trainrute/deleterute/{id_train}', 'AdminController@deleterute');
 
 
 

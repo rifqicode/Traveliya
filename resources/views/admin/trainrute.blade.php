@@ -34,8 +34,15 @@
                   <td>{{ $tr->hours }}</td>
                   <td>{{ $tr->max }}</td>
                   <td>{{ $tr->price }}</td>
-                  <td><a href="{{ url('admin/trainrute/edit/'.$tr->id_train) }}" class="btn btn-primary">Edit</a></td>
-                  <td><a href="{{ url('admin/trainrute/delete/'.$tr->id_train) }}" class="btn btn-danger">Delete</a></td>
+                  <td>
+                      <form action="{{url('admin/trainrute/deleterute/'.$tr->id_train)}}"method="POST">
+                      {{ csrf_field() }}
+                      {{ method_field('delete') }}
+
+                      <a href="{{ url('admin/train/editrute/'.$tr->id_train) }}"class="btn btn-sm btn-primary">update</a>
+                      <button class="btn btn-sm btn-danger" type="submit">Delete</button>
+                      </form>
+                  </td>
                 </tr>
                 @endforeach
                
