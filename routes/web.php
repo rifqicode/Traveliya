@@ -70,6 +70,7 @@ Route::get('/payment/pay/{code}' , 'PaymentController@apiPayment');
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+
     Route::get('/', 'AdminController@index');
     Route::get('/station', 'AdminController@viewstation');
     Route::post('/station/createStation', 'AdminController@createStation');
@@ -77,7 +78,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/trainrute', 'AdminController@trainrute');
     Route::post('/train/createTrain', 'AdminController@createTrain');
     Route::get('/train/editrute/{id_train}', 'AdminController@editrute');
-    Route::post('/train/update', 'AdminController@UpdateTrain');
+    Route::put('/train/update', 'AdminController@UpdateTrain');
     Route::delete('/trainrute/deleterute/{id_train}', 'AdminController@deleterute');
 
 

@@ -8,9 +8,13 @@ use DB;
 class Train extends Model
 {
 
-  protected $primaryKey = 'id_train';
   public $timestamps = false;
 
+  protected $fillable = ['train', 'class', 'departure_date' , 'from' , 'destination', 'hours','max','price'];
+  public function ticket()
+  {
+    return $this->hasOne(Trainticket::class , 'id_train' , 'id_train');
+  }
   protected $primaryKey = 'id_train';
 
     public static function trainList($dep_date , $class , $from , $destination)

@@ -30,8 +30,8 @@ class HomeController extends Controller
 
      public function index()
      {
-        $con = Train::find(1);
-        return $con;
+        $con = Train::where('id_train' , 2)->with('ticket')->get();
+        // return $con->id_train;
      }
      public function count()
      {

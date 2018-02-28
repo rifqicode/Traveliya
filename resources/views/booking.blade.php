@@ -36,7 +36,7 @@
                         <input type="text" class="form-control" placeholder="Name" name="name[]" >
                         <input type="text" class="form-control" placeholder="Email" name="email[]">
                         <input type="text" class="form-control" placeholder="No KTP" name="no_ktp[]">
-                        <input type="text" id="datepicker10" class="form-control born-date" class="born_date" placeholder="Tanggal Lahir" name="born_date[]">
+                        <input type="text" class="form-control born-date" class="born_date" placeholder="Tanggal Lahir" name="born_date[]">
                     @endfor
 
                     <br>

@@ -5,11 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Station;
 use App\Train;
+use App\Trainticket;
 use Yajra\Datatables\Datatables;
 
 
 class AdminController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('checkRole');
+    }
+
+
     public function index()
     {
       return view('admin.admin');
@@ -23,6 +32,7 @@ class AdminController extends Controller
 
     public function createStation(Request $request)
     {
+
       $newstation = new Station;
       $newstation->station_name = $request->station_name;
       $newstation->location = $request->location;
@@ -33,11 +43,15 @@ class AdminController extends Controller
 
     public function viewtrain()
     {
+
       $showStation = Station::all();
       return view('admin.train')->with('station' , $showStation);
+
     }
     public function createTrain(Request $request)
     {
+
+      // return $request;
      $newtrain = new Train;
      $newtrain->train = $request->train;
      $newtrain->class = $request->class;
@@ -69,9 +83,19 @@ class AdminController extends Controller
       return view('admin.editrute', compact('showTrain' , 'showStation' , 'id'));
 
     }
+
+    public function deleterute($id)
+    {
+      Train::where('id_train' , $id)->delete();
+      Trainticket::where('id_train' , $id)->delete();
+
+      return back();
+    }
     public function UpdateTrain(Request $request)
     {
 
+
+      // return $request;
       $data = $this->validate($request,[
         'train'=>'required',
         'class'=>'required',
@@ -84,9 +108,10 @@ class AdminController extends Controller
       ]);
 
       $id = $request->id;
+      $t =Train::find($id)->update($data);
 
-      Train::update($id,$data);
-      return redirect('admin/trainrute')->with('success','berhasil diubah');
+      flash("data berhasil diubah");
+      return redirect('admin/trainrute');
 
     }
 

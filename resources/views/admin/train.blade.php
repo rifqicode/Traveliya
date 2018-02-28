@@ -4,7 +4,7 @@
     <section class="content">
 <div class="container">
     <div class="row">
-    
+
 
         <div class="row">
             <div class="col-sm-8">
@@ -13,7 +13,7 @@
                 {{ csrf_field() }}
                     <div class="form-group float-label-control">
                     <label for="">train</label>
-                    <input class="form-control" placeholder="Train" name="train">
+                    <input type="text" class="form-control" placeholder="Train" name="train">
                 </div>
                     <div class="form-group float-label-control">
                         <label for="">class</label>
@@ -22,7 +22,7 @@
                         <option value="ekonomi">Ekonomi</option>
                         <option value="Bisnis">Bisnis</option>
                         <option value="firstclass">First Class</option>
-                        
+
                         </select>
                     </div>
                     <div class="form-group float-label-control">
@@ -31,25 +31,25 @@
                     </div>
                     <div class="form-group float-label-control">
                         <label for="">form  </label>
-                        
+
                         <select name="from" class="form-control">
 
                         @foreach($station as $s)
                         <option value="{{ $s->station_name }}">{{ $s->station_name }}</option>
                         @endforeach
-                        
+
                         </select>
-                        
+
                     </div>
-                    
+
                     <div class="form-group float-label-control">
                         <label for="">destination</label>
                         <select name="destination" class="form-control">
-                        
+
                         @foreach($station as $s)
                         <option value="{{ $s->station_name }}">{{ $s->station_name }}</option>
                         @endforeach
-                        
+
                         </select>
                     </div>
                     <div class="form-group float-label-control">
@@ -58,19 +58,24 @@
                     </div>
                     <div class="form-group float-label-control">
                         <label for="">max</label>
-                        <input class="form-control" placeholder="max" name="max">
+                        <input type="number" class="form-control" placeholder="max" name="max">
                     </div>
                     <div class="form-group float-label-control">
                         <label for="">price</label>
-                        <input class="form-control" placeholder="price" name="price">
                     </div>
-                    <button type="submit" class="btn">Submit</button>
+                    <div class="input-group">
+                      <span class="input-group-addon">Rp. </span>
+                      <input type="text" name="price" class="form-control" aria-label=" IDR ">
+                      <span class="input-group-addon">.00</span>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary" >Submit</button>
                 </form>
-               
+
             </div>
         </div>
     </div>
 </div>
-    
+
 
         @endsection

@@ -2,7 +2,7 @@
 
 @section('content')
 
-       
+
 <div class="box">
             <div class="box-header">
               <h3 class="box-title">Data Table With Full Features</h3>
@@ -18,7 +18,7 @@
                   <th>Dari</th>
                   <th>Tujuan</th>
                   <th>hours</th>
-                  <th>max</th>   
+                  <th>max</th>
                   <th>price</th>
                   <th colspan="2"><center>Action</center></th>
                 </tr>
@@ -39,13 +39,13 @@
                       {{ csrf_field() }}
                       {{ method_field('delete') }}
 
-                      <a href="{{ url('admin/train/editrute/'.$tr->id_train) }}"class="btn btn-sm btn-primary">update</a>
                       <button class="btn btn-sm btn-danger" type="submit">Delete</button>
                       </form>
+                      <a href="{{ url('admin/train/editrute/'.$tr->id_train) }}"class="btn btn-sm btn-primary">Update</a>
                   </td>
                 </tr>
                 @endforeach
-               
+
               </table>
             </div>
             <!-- /.box-body -->
