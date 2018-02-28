@@ -52,6 +52,14 @@ class BookingController extends Controller
         $no_ktp = $request->input('no_ktp');
         $borndate = $request->input('born_date');
 
+        $allpas = $adult + $child;
+        $getMaxTrain = Train::where('id_train' , $request->id)->get();
+        foreach ($getMaxTrain as $key) {
+          $max = $key->max;
+        }
+        $min = $max - $allpas;
+        $editTrain = Train::edit($min , $request->id);
+
         if ($type_trip == "Round_Trip") {
           $idTrain1 = $request->input('idTrain1');
           $idTrain2 = $request->input('idTrain2');

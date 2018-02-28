@@ -41,7 +41,10 @@ Auth::routes();
 Route::get('/verifikasi', 'VerifikasiController@index')->name('verifikasi');
 Route::get('/user/verify', 'VerifikasiController@confirm')->name('userverify');
 
+//testing
 Route::get('/testing', 'HomeController@index');
+
+
 // Plane
 Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');

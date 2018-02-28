@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use DB;
 use App\Trainticket;
+use App\Train;
 
 
 class HomeController extends Controller
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
      public function index()
      {
-        // empty
+        $con = Train::find(1);
+        return $con;
      }
      public function count()
      {

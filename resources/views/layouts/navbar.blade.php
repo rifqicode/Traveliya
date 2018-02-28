@@ -199,7 +199,7 @@
 				});
 
 
-				$( ".born_date").datepicker({
+				$( ".born-date").datepicker({
 					 format: "dd-mm-yyyy",
 					 startView: 2,
 
