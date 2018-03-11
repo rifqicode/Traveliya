@@ -58,6 +58,7 @@ class BookingController extends Controller
           $max = $key->max;
         }
         $min = $max - $allpas;
+
         $editTrain = Train::edit($min , $request->id);
 
         if ($type_trip == "Round_Trip") {
@@ -80,6 +81,7 @@ class BookingController extends Controller
             for ($j=0; $j < $adult ; $j++) {
                 $dPassenger = new DetailPassenger();
                 $dPassenger->id_trainticket = $dTrainticket->id;
+                $dPassenger->passenger_ticket = str_random(10);
                 $dPassenger->name_passenger = $name[$j];
                 $dPassenger->email_passenger = $email[$j];
                 $dPassenger->no_ktp = $no_ktp[$j];
@@ -105,6 +107,7 @@ class BookingController extends Controller
           for ($i=0; $i < $adult ; $i++) {
               $dPassenger = new DetailPassenger();
               $dPassenger->id_trainticket = $dTrainticket->id;
+              $dPassenger->passenger_ticket = str_random(10);
               $dPassenger->name_passenger = $name[$i];
               $dPassenger->email_passenger = $email[$i];
               $dPassenger->no_ktp = $no_ktp[$i];

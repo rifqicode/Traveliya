@@ -8,8 +8,19 @@ use Yajra\Datatables\Datatables;
 
 class DatatablesController extends Controller
 {
-    public function trainrute()
-    {
-        return Datatables::of(Train::query())->make(true);
-    }
+        public function getIndex()
+      {
+          return view('datatables.index');
+      }
+
+      /**
+       * Process datatables ajax request.
+       *
+       * @return \Illuminate\Http\JsonResponse
+       */
+       
+      public function anyData()
+      {
+          return Datatables::of(User::query())->make(true);
+      }
 }

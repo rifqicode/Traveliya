@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
+  <title>AdminLTE 2</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -27,8 +27,9 @@
   <link rel="stylesheet" href="{{ asset('bower_components/bootstrap-daterangepicker/daterangepicker.css') }}">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">
 
 
   <!-- Google Font -->
@@ -72,7 +73,7 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{ asset('img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ Auth::user()->name }}</p>
@@ -92,13 +93,13 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">Menu</li>
         <li class=" treeview">
-          <a href="#">
+          <a href="{{ url('/admin')}}">
             </i> <span>Dashboard</span>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
-            <span>rute</span>
+            <span>Rute</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -121,6 +122,18 @@
             <li><a href="{{ url('admin/train') }}"><i class="fa fa-circle-o"></i> Train</a></li>
           </ul>
         </li>
+
+        <li class="treeview">
+          <a href="#">
+            <span>Payment Status</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ url('admin/payment/trainticket') }}"><i class="fa fa-circle-o"></i> Trainticket </a></li>
+          </ul>
+        </li>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -130,22 +143,16 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <!-- <small>Control panel</small> -->
+        Traveliya
       </h1>
-      <!-- <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol> -->
     </section>
-    @yield('content')
-        </section>
-        <!-- right col -->
-      </div>
-      <!-- /.row (main row) -->
 
-    </section>
-    <!-- /.content -->
+       <section class="content">
+          @yield('content')
+       </section>
+
+
+      </div>
   </div>
 
 
@@ -154,14 +161,16 @@
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.4.0
     </div>
-    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> All rights
-    reserved.
+    <strong>Copyright &copy; 2014-2016 <a href="https://adminlte.io">Almsaeed Studio</a>.</strong>
   </footer>
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="//code.jquery.com/jquery.js"></script>
-<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"></script>
+
+
 <script src="{{ asset('bower_components/jquery/dist/jquery.min.js') }}"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('bower_components/jquery-ui/jquery-ui.min.js') }}"></script>
@@ -176,9 +185,6 @@
 <script src="{{ asset('bower_components/morris.js/morris.min.js') }}"></script>
 <!-- Sparkline -->
 <script src="{{ asset('bower_components/jquery-sparkline/dist/jquery.sparkline.min.js') }}"></script>
-<!-- jvectormap -->
-<script src="{{ asset('plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-<script src="{{ asset('plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
 <!-- jQuery Knob Chart -->
 <script src="{{ asset('bower_components/jquery-knob/dist/jquery.knob.min.js') }}"></script>
 <!-- daterangepicker -->
@@ -187,7 +193,6 @@
 <!-- datepicker -->
 <script src="{{ asset('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
 <!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
 <!-- Slimscroll -->
 <script src="{{ asset('bower_components/jquery-slimscroll/jquery.slimscroll.min.js') }}"></script>
 <!-- FastClick -->
@@ -214,5 +219,6 @@
     })
   })
 </script>
+@stack('scripts')
 </body>
 </html>

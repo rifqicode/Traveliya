@@ -1,70 +1,61 @@
-@extends('layouts.navbar')
-
-@section('content')
-
-    <br>
-    <div class="row">
+ <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">E-Ticketing</div>
 
                 <div class="panel-body">
-
-                  @foreach($showPassenger as $pass)
 
                     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                     <div class="panel-heading" role="tab" id="headingOne">
                       <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#train" aria-expanded="true" aria-controls="collapseOne">
-                            <center> E-Ticket  </center>
-                        </a>
+                        <center>E Ticket</center>
                       </h4>
                     </div>
                     <div id="train" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                       <div class="panel-body">
 
+                        @foreach($passenger as $pass)
+
                         <div class="col-sm-12 mt">
                           <div class="input-field">
-                            <p align="center"> Ticket Code </p>
+                            <p align="center"><font size="5"> Ticket Code </font></p>
                           </div>
                             <div class="input-field">
                               <p align="center"><font size="10">{{ $pass->passenger_ticket }}</font></p>
                             </div>
                         </div>
 
+                        <br>
+
                           <div class="col-sm-12 mt">
                               <div class="input-field">
-                                <label for=""> Nama Penumpang : {{ $pass->name_passenger }}</label>
+                                <label for=""><font size="5"> Nama Penumpang :  {{ $pass->name_passenger}} </font></label>
 
                               </div>
                           </div>
 
-                            <div class="col-sm-12 mt">
-                                <div class="input-field">
-                                  <label for=""> No KTP : {{ $pass->no_ktp }}</label>
-                                </div>
-                            </div>
+                          <br>
+
+                          <div class="col-sm-12 mt">
+                              <div class="input-field">
+                                <label for=""><font size="5"> Email Penumpang :  {{ $pass->email_passenger}} </font></label>
+
+                              </div>
+                          </div>
+
+                          <br>
 
                             <div class="col-sm-12 mt">
                                 <div class="input-field">
-                                  <p align="right">
-                                  <a href="{{ url('pdfdownload/'.$pass->id_passenger ) }}" class="btn btn-primary"> Print PDF</a>
-                                  </p>
+                                  <label for=""><font size="5"> No KTP : {{ $pass->no_ktp }} </font></label>
                                 </div>
                             </div>
 
                       </div>
                     </div>
                     </div>
+                    @endforeach
 
                   </div>
-                  @endforeach
         </div>
     </div>
-
-    <script>
-
-
-    </script>
-@endsection

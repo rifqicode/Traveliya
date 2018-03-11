@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('testpdf', function(){
+    return view('pdf.pdf');
+});
 
 Route::get('/', function () {
     return view('home');
@@ -18,15 +21,6 @@ Route::get('/plane', function () {
     return view('plane');
 });
 
- Route::get('/editprofile', function () {
-     return view('editprofile');
- });
-
-// Route::get('/editprofile', function () {
-//     return view('editprofile');
-// });
-
-Route::get('/train', 'TrainController@index');
 
 Route::get('/editprofile', function () {
     return view('editprofile');
@@ -50,7 +44,7 @@ Route::get('/flight' , 'FlightController@index')->name('plane');
 Route::post('/flight/find' , 'FlightController@findPlane');
 
 // train
-// Route::get('/train', 'TrainController@index')->name('train');
+Route::get('/train', 'TrainController@index')->name('train');
 Route::post('/train/find' , 'TrainController@findTrain');
 Route::post('/train/booking/{id}' , 'BookingController@bookingView');
 // Round Trip
@@ -68,8 +62,11 @@ Route::post('/payment/pay' , 'PaymentController@pay');
 Route::get('/payment/pay/showpay/{id_trainticket}' , 'PaymentController@showpay');
 Route::get('/payment/pay/{code}' , 'PaymentController@apiPayment');
 
+// print PDF
+Route::get('/pdfdownload/{id_passenger}' , 'PaymentController@pdfDownload');
 
-Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
+// admin group
+Route::group(['prefix' => 'admin' , 'middleware' => 'checkRole' ], function() {
 
     Route::get('/', 'AdminController@index');
     Route::get('/station', 'AdminController@viewstation');
@@ -80,6 +77,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::get('/train/editrute/{id_train}', 'AdminController@editrute');
     Route::put('/train/update', 'AdminController@UpdateTrain');
     Route::delete('/trainrute/deleterute/{id_train}', 'AdminController@deleterute');
+    Route::get('/payment/trainticket', 'AdminController@Trainticket');
+    Route::get('/payment/trainticket/datas', 'AdminController@TrainticketDatas')->name('trainticket.data');
 
 
 
