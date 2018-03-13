@@ -17,7 +17,6 @@ class CreateDetailPassengersTable extends Migration
             $table->increments('id_passenger');
             $table->integer('id_trainticket')->nullable();
             $table->integer('id_planeticket')->nullable();
-            $table->integer('passenger_ticket')->nullable();
             $table->string('name_passenger');
             $table->string('email_passenger');
             $table->string('no_ktp');

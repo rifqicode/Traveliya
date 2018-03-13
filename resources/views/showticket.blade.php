@@ -29,7 +29,7 @@
                             <p align="center"> Ticket Code </p>
                           </div>
                             <div class="input-field">
-                              <p align="center"><font size="10">{{ $pass->passenger_ticket }}</font></p>
+                              <p align="center"><font size="10">{{ $ticket_code }}</font></p>
                             </div>
                         </div>
 
@@ -43,14 +43,6 @@
                             <div class="col-sm-12 mt">
                                 <div class="input-field">
                                   <label for=""> No KTP : {{ $pass->no_ktp }}</label>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12 mt">
-                                <div class="input-field">
-                                  <p align="right">
-                                  <a href="{{ url('pdfdownload/'.$pass->id_passenger ) }}" class="btn btn-primary"> Print PDF</a>
-                                  </p>
                                 </div>
                             </div>
 

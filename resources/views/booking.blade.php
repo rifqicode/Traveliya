@@ -18,7 +18,7 @@
                     <input type="hidden" name="id" value="{{ $id }}">
                     <input type="hidden" name="type_trip" value="{{ $type_trip }}">
 
-                    <h4>Data Pemesan</h4>
+                    <h4>Data Kontak</h4>
                     <input type="text" class="form-control" placeholder="Name" name="name_contact" value="{{ Auth::user()->name }}">
                     <input type="text" class="form-control" placeholder="Email" name="email_contact" value="{{ Auth::user()->email }}">
                     <input type="number" class="form-control"  placeholder="No_Telp" name="no_telp">
@@ -32,7 +32,6 @@
                 <div class="panel-body">
 
                     @for($a=1; $a<= $adult; $a++)
-                        <br>
                         <h4>Data Penumpang</h4>
                         <input type="text" class="form-control" placeholder="Name" name="name[]" >
                         <input type="text" class="form-control" placeholder="Email" name="email[]">
@@ -42,7 +41,6 @@
 
                     <br>
                     <br>
-
                     <p align="right">
                     <input  type="submit"  class="btn btn-primary" value="Booking">
                     </p>

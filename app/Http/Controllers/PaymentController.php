@@ -8,7 +8,6 @@ use App\DetailPassenger;
 use App\Payment;
 use App\Train;
 use Auth;
-use PDF;
 
 class PaymentController extends Controller
 {
@@ -59,9 +58,7 @@ class PaymentController extends Controller
         $id_users = Auth::user()->id;
         $status = 2;
         $code = str_random(10);
-        //check and update status
         $pay = Payment::checkPayment($id_trainticket , $id_users , $status);
-        // updating trainticket code
         $ticket = Trainticket::updatePayment($id_trainticket , $status , $code);
 
         flash('Pembayaran Sukses');
@@ -103,21 +100,6 @@ class PaymentController extends Controller
        $showPassenger = DetailPassenger::where('id_trainticket', $id_trainticket)->get();
        // return $showPassenger;
        return view('showticket', compact('showTicket' , 'showPassenger' , 'ticket_code'));
-    }
-
-    public function pdfDownload($id_passenger)
-    {
-
-      $passenger = DetailPassenger::where('id_passenger' , $id_passenger)->get();
-
-      foreach ($passenger as $p) {
-        $name = $p->name_passenger;
-      }
-
-
-      $pdf = PDF::loadView('pdf.pdf', compact('passenger'));
-      return $pdf->download($name.'.pdf');
-
     }
 
 }

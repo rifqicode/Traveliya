@@ -7,7 +7,6 @@ use Auth;
 use DB;
 use App\Trainticket;
 use App\Train;
-use App\DetailPassenger;
 
 
 class HomeController extends Controller
@@ -31,9 +30,8 @@ class HomeController extends Controller
 
      public function index()
      {
-
-       $d = DetailPassenger::where('id_trainticket' , 9)->get();
-       return $d;
+        $con = Train::where('id_train' , 2)->with('ticket')->get();
+        // return $con->id_train;
      }
      public function count()
      {

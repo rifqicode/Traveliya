@@ -64,16 +64,4 @@ class Trainticket extends Model
 
       return $show;
     }
-
-    public static function trainticketData()
-    {
-        $datas = DB::table('traintickets')
-                    ->join('users', 'traintickets.id_users' , '=' , 'users.id')
-                    ->join('trains', 'traintickets.id_train' , '=' , 'trains.id_train')
-                    ->select('traintickets.*','users.*','traintickets.created_at as trainticket' , 'trains.*')
-                    // berarti gw gituin semua ya..... iya // mendokse sep lah
-                    ->get();
-
-        return $datas;
-    }
 }

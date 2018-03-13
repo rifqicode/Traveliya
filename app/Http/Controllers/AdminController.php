@@ -51,6 +51,7 @@ class AdminController extends Controller
     public function createTrain(Request $request)
     {
 
+      // return $request;
      $newtrain = new Train;
      $newtrain->train = $request->train;
      $newtrain->class = $request->class;
@@ -90,7 +91,6 @@ class AdminController extends Controller
 
       return back();
     }
-
     public function UpdateTrain(Request $request)
     {
 
@@ -113,18 +113,6 @@ class AdminController extends Controller
       flash("data berhasil diubah");
       return redirect('admin/trainrute');
 
-    }
-
-    public function Trainticket()
-    {
-      return view('admin.trainticket');
-    }
-
-    public function TrainticketDatas()
-    {
-
-      $data = Trainticket::trainticketData();
-      return Datatables::of($data)->make(true);
     }
 
 

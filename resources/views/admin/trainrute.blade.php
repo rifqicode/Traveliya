@@ -44,7 +44,6 @@
                       <a href="{{ url('admin/train/editrute/'.$tr->id_train) }}"class="btn btn-sm btn-primary">Update</a>
                   </td>
                 </tr>
-                </tbody>
                 @endforeach
 
               </table>

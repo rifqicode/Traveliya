@@ -1,16 +1,14 @@
 @extends('layouts.navbaradmin')
 @section('content')
     <!-- Main content -->
+    <section class="content">
 <div class="container">
     <div class="row">
 
 
-    <div class="col-md-6">
-      <div class="box box-success">
-        <div class="box-header with-primary">
-          <h3 class="box-title">Rute Kereta</h3>
-        </div>
-        <div class="box-body">
+        <div class="row">
+            <div class="col-sm-8">
+
                 <form role="form" action="{{ url('admin/train/createTrain')}}" method="POST">
                 {{ csrf_field() }}
                     <div class="form-group float-label-control">
@@ -80,4 +78,4 @@
 </div>
 
 
-@endsection
+        @endsection
