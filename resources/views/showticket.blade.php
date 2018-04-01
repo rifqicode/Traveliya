@@ -29,7 +29,7 @@
                             <p align="center"> Ticket Code </p>
                           </div>
                             <div class="input-field">
-                              <p align="center"><font size="10">{{ $ticket_code }}</font></p>
+                              <p align="center"><font size="10">{{ $pass->passenger_ticket }}</font></p>
                             </div>
                         </div>
 

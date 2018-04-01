@@ -113,22 +113,22 @@
 
 									 <div role="tabpanel" class="tab-pane" id="roundtrip">
 									 	<div class="row">
+
                     <div class="col-xxs-12 col-xs-6 mt">
-										<form class="" action="{{ url('/train/find') }}" method="post">
+											<form class="" action="{{ url('/train/find') }}" method="post">
 											{{ csrf_field() }}
-
 											<input type="hidden" name="type_trip" value="Round_Trip">
-											<div class="input-field">
 
-												<label for="from"><a>Dari  :</a></label>
+												<div class="input-field">
+													<label for="from"><a>Dari  :</a></label>
 
-												<select id="js-example-basic-three" class="form-control" name="from">
-													<option disabled selected value></option>
+													<select id="js-example-basic-three" class="form-control" name="from">
+														<option disabled selected value></option>
 
-													@foreach($datas as $station)
-													<option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
-													@endforeach
-												</select>
+														@foreach($datas as $station)
+														<option value="{{ $station->station_name }}">{{ $station->station_name }}</option>
+														@endforeach
+													</select>
 
 											</div>
 										</div>
@@ -146,6 +146,7 @@
 
 										</div>
 									</div>
+
 										<div class="col-sm-12 mt">
 											<div class="input-field">
 												<label for="date-start"><a>Tanggal Berangkat   :</a></label>

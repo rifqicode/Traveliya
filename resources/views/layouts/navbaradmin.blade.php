@@ -121,6 +121,7 @@
             <li><a href="{{ url('admin/train') }}"><i class="fa fa-circle-o"></i> Train</a></li>
           </ul>
         </li>
+        <li><a href="{{ url('/') }}"><span>Return Website</span></a>
     </section>
     <!-- /.sidebar -->
   </aside>

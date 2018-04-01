@@ -30,7 +30,7 @@
                         <h4>Data Penumpang</h4>
                         <input type="text" class="form-control" placeholder="Name" name="name[]" >
                         <input type="text" class="form-control" placeholder="Email" name="email[]">
-                        <input type="text" class="form-control"placeholder="No KTP" name="no_ktp[]">
+                        <input type="number" class="form-control"placeholder="No KTP" name="no_ktp[]">
                         <input type="date" class="form-control" placeholder="Tanggal Lahir" name="born_date[]">
                     @endfor
 

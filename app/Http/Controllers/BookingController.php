@@ -105,6 +105,7 @@ class BookingController extends Controller
           for ($i=0; $i < $adult ; $i++) {
               $dPassenger = new DetailPassenger();
               $dPassenger->id_trainticket = $dTrainticket->id;
+              $dPassenger->passenger_ticket = str_random(10);
               $dPassenger->name_passenger = $name[$i];
               $dPassenger->email_passenger = $email[$i];
               $dPassenger->no_ktp = $no_ktp[$i];
