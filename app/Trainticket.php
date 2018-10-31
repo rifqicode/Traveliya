@@ -9,6 +9,9 @@ use DB;
 
 class Trainticket extends Model
 {
+
+    protected $primaryKey = 'id_trainticket';
+
     public static function list($id)
     {
        $list = DB::table('users')

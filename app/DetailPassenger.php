@@ -8,6 +8,7 @@ use DB;
 class DetailPassenger extends Model
 {
     public $timestamps = false;
+    protected $primaryKey = 'id_passenger';
 
     public static function showPas($id_trainticket)
     {

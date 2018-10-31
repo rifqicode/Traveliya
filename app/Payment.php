@@ -7,6 +7,8 @@ use DB;
 
 class Payment extends Model
 {
+    protected $primaryKey = 'id_payment';
+
     public static function infoPayment($id_users , $id_trainticket)
     {
 

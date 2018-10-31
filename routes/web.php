@@ -81,6 +81,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function() {
     Route::put('/train/update', 'AdminController@UpdateTrain');
     Route::delete('/trainrute/deleterute/{id_train}', 'AdminController@deleterute');
 
-
-
 });

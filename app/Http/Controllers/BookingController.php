@@ -54,17 +54,19 @@ class BookingController extends Controller
 
         $allpas = $adult + $child;
         $getMaxTrain = Train::where('id_train' , $request->id)->get();
+
         foreach ($getMaxTrain as $key) {
           $max = $key->max;
         }
+
         $min = $max - $allpas;
         $editTrain = Train::edit($min , $request->id);
-
         if ($type_trip == "Round_Trip") {
           $idTrain1 = $request->input('idTrain1');
           $idTrain2 = $request->input('idTrain2');
 
           $traindatas = ['0' => $idTrain1 , '1' => $idTrain2];
+
           for ($i=0; $i < 2; $i++) {
             $dTrainticket = new Trainticket();
             $dTrainticket->id_users = Auth::user()->id;
@@ -79,7 +81,7 @@ class BookingController extends Controller
 
             for ($j=0; $j < $adult ; $j++) {
                 $dPassenger = new DetailPassenger();
-                $dPassenger->id_trainticket = $dTrainticket->id;
+                $dPassenger->id_trainticket = $dTrainticket->id_trainticket;
                 $dPassenger->name_passenger = $name[$j];
                 $dPassenger->email_passenger = $email[$j];
                 $dPassenger->no_ktp = $no_ktp[$j];
@@ -90,7 +92,11 @@ class BookingController extends Controller
 
         } else {
 
+          echo "hai";
+          // die;
+
           $dTrainticket = new Trainticket();
+
           $dTrainticket->id_users = Auth::user()->id;
           $dTrainticket->id_train = $idtrain;
           $dTrainticket->type_trip = $type_trip;
@@ -101,10 +107,9 @@ class BookingController extends Controller
           $dTrainticket->status = 0;
           $dTrainticket->save();
 
-
           for ($i=0; $i < $adult ; $i++) {
               $dPassenger = new DetailPassenger();
-              $dPassenger->id_trainticket = $dTrainticket->id;
+              $dPassenger->id_trainticket = $dTrainticket->id_trainticket;
               $dPassenger->passenger_ticket = str_random(10);
               $dPassenger->name_passenger = $name[$i];
               $dPassenger->email_passenger = $email[$i];
@@ -112,6 +117,7 @@ class BookingController extends Controller
               $dPassenger->born_date = $borndate[$i];
               $dPassenger->save();
           }
+
         }
 
         flash('Pemesanan Berhasil');
